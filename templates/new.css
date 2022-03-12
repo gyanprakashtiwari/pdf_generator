@@ -1,0 +1,473 @@
+:root{
+    --btn-font-family: 'Source Sans Pro';
+--btn-font-weight: 600;
+--btn-border-width: 1px;
+--btn-disabled-opacity: 0.65;
+
+--color-golden-yellow: #fcb112;
+--color-golden-yellow-light: #fffbf3;
+--color-golden-yellow-light-10: #f0e3c8;
+--color-golden-yellow-light-20: #fffdd0;
+--color-golden-yellow-light-30: #eecb80;
+--color-golden-yellow-dark: #e0aa36;
+--color-golden-yellow-dark-10: #e39f10;
+--color-golden-yellow-dark-15: #d6960f;
+--color-salmon: #ff8765;
+--color-white: #ffffff;
+--color-black: #000000;
+--color-grey: #f6f6f6;
+--color-greyblue: #7eb7b7;
+--color-charcoal-light-50: #93a3a9;
+--color-charcoal: #264653;
+--color-charcoal-light-10: #25596d;
+--color-charcoal-light-95: #f4f6f6;
+--color-charcoal-light-25: #5c747e;
+--color-charcoal-light-35: #818d92;
+--color-charcoal-light-75: #c9d1d4;
+--color-charcoal-light-85: #dee3e5;
+--color-charcoal-dark: #132329;
+--color-charcoal-dark-75: #0a1215;
+
+--color-persian-green-light-25: #cae7e3;
+--color-persian-green-light-50: #94cec7;
+--color-persian-green-light-75: #cae7e3;
+--color-persian-green: #2a9d8f;
+--color-persian-green-dark-25: #1f766b;
+--color-persian-green-dark-50: #154f47;
+--color-persian-green-dark-75: #0a2724;
+--color-persian-green-dark-95: #264653;
+--color-sky-blue: #67b9b9;
+--color-sky-blue-dark: #5ba2a2;
+--color-sky-blue-light: #a7d5d5;
+--color-dark-blue: #25596d;
+--color-burnt-sienna-light: #f5bcab;
+--color-burnt-sienna: #e76f51;
+--color-burnt-sienna-dark-10: #d06449;
+--color-burnt-sienna-dark-25: #ad533d;
+
+--color-red-light: #f8eae6;
+--color-blue: #85a7d2;
+--color-blue-light: #eef2fa;
+--color-green: #3ea378;
+--color-green-light: #e9faf1;
+--color-blue-dark: #306ab0;
+--greyish-brown: #4a4a4a;
+--color-submarine: #93a3a9;
+--color-pale-grey: #dfeff1;
+--color-brownish-orange: #c96e23;
+
+}
+#first{
+    margin:30;
+}
+
+.neighbour-name {
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: bold;
+}
+.text-f-16 {
+  font-size: 1.6rem;
+}
+.text-f-13 {
+  font-size: 1.3rem !important;
+}
+.text-f-9 {
+  font-size: 0.9rem;
+}
+.text-f-10 {
+  font-size: 1rem !important;
+}
+.text-f-6-5 {
+  font-size: 0.65rem !important;
+}
+.text-f-7-5 {
+  font-size: 0.75rem !important;
+}
+.text-f-8-6 {
+  font-size: 0.86rem !important;
+}
+.font-weight-400 {
+  font-weight: 400 !important ;
+}
+.font-weight-500 {
+  font-weight: 500 !important;
+}
+.font-weight-600 {
+  font-weight: 600;
+}
+.font-weight-700 {
+  font-weight: 700;
+}
+.province-text {
+  font-size: 1rem !important;
+  line-height: 1rem;
+}
+.text-f-6 {
+  font-size: 0.6rem !important;
+}
+.text-f-4 {
+  font-size: 0.4rem !important;
+}
+.text-f-3 {
+  font-size: 0.3rem !important;
+}
+.text-f-5 {
+  font-size: 0.5rem !important;
+}
+.text-f-4-5 {
+  font-size: 0.45rem !important;
+}
+.secondary-data-more {
+  font-size: 3rem;
+  font-weight: bold;
+  min-height: 10.5rem;
+}
+.text-truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sectionHeader {
+  border-bottom: 2px solid var(--color-persian-green);
+  padding-bottom: 0.4rem;
+}
+  .icon {
+    font-size: 1rem !important;
+  }
+  .mainText {
+    font-size: 1rem;
+    color: var(--color-charcoal);
+    font-weight: 400;
+  }
+  .subtext {
+    font-size: 0.8rem;
+    color: var(--color-persian-green);
+  }
+  
+    .heading-report-f {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--color-charcoal);
+    }
+    .border-school {
+      border-bottom: 2px solid var(--color-persian-green-light-50);
+    }
+    .restaurant-card-container {
+      width: 350px !important;
+    }
+    .school-card-container {
+      width: 280px !important;
+    }
+    .day-care-container {
+      width: auto;
+    }
+    .download-text-f {
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+    .neighbour-name-text-f {
+      font-size: 2.3rem;
+      font-weight: bold;
+      color: var(--color-persian-green);
+    }
+    .neighbour-state-text-f {
+      font-size: 1.7rem;
+  
+     color: var(--color-charcoal-light-25);
+    }
+    .heading-icon-f {
+      font-size: 3rem;
+      margin-right: 0.5rem;
+    }
+    .heading-f {
+      font-size: 2.3rem;
+      font-weight: bold;
+    }
+    .sub-head-f {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    .heading-container-f {
+      border-bottom: 0.2rem solid var(--color-persian-green);
+    }
+  
+    @media only screen and (max-width: 1320px) {
+      .day-care-container {
+        width: 80vw !important;
+      }
+    }
+  
+    @media only screen and (max-width: 767px) {
+      .heading-report-f {
+        font-size: 0.9rem;
+        font-weight: bold;
+       color: var(--color-charcoal);
+      }
+      .download-text-f {
+        font-size: 0.86rem;
+        font-weight: 600;
+      }
+      .neighbour-name-text-f {
+        font-size: 1.1rem;
+        font-weight: bold;
+       color: var(--color-persian-green);
+      }
+      .neighbour-state-text-f {
+        font-size: 0.9rem;
+  
+        color: var(--color-charcoal-light-25);
+      }
+      .heading-icon-f {
+        font-size: 1.3rem;
+        margin-right: 0.5rem;
+      }
+      .heading-f {
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+      .text-legal-f {
+        font-size: 1.2rem;
+       color: var(--color-charcoal);
+      }
+      .sub-head-f {
+        font-size: 0.9rem;
+        font-weight: bold;
+      }
+    }
+    @media only screen and (max-width: 610px) {
+      .day-care-container {
+        width: 79vw !important;
+      }
+    }
+    @media only screen and (max-width: 450px) {
+      .day-care-container {
+        width: 70vw !important;
+      }
+      .restaurant-card-container {
+        width: 270px !important;
+      }
+    }
+    @media only screen and (max-width: 310px) {
+      .heading-f {
+        font-size: 0.8rem;
+        font-weight: bold;
+      }
+      .sub-head-f {
+        font-size: 0.7rem;
+        font-weight: bold;
+      }
+      .day-care-container {
+        width: 65vw !important;
+      }
+      .school-card-container {
+        width: 200px !important;
+      }
+      .restaurant-card-container {
+        width: 190px !important;
+      }
+    }
+  
+  
+    .font-circuler-std {
+    
+        font-family: 'DM Sans', sans-serif;
+      }
+      
+      .u-color-color-persian-green{
+          color:var(--color-persian-green);
+      }
+      .u-bg-color-persian-green{
+        background-color:var(--color-persian-green);
+      }
+      .u-color-color-charcoal{
+          color:var(--color-charcoal);
+      }
+
+
+ 
+ 
+ 
+      
+      
+      
+      
+      .dwelling-table {
+    overflow: auto;
+  }
+    .heading {
+      font-size: 0.4rem;
+      color: var(--u-color-color-charcoal);
+      font-weight: 600;
+    }
+    .border-dotted {
+      border-bottom: 0.6px dotted var(--color-charcoal-light-50);
+    }
+    .content {
+      font-size: 0.35rem;
+      color: var(--color-charcoal-light-50);
+    }
+    .rounded-right{
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
+    .check{
+        padding-left: 100px;
+    }
+  
+   .first{
+       margin:40px;
+   }
+   .second{
+       margin-left: 20px;
+   }
+  .chart-background {
+    background: #f8ddae;
+  }
+  @media only screen and (max-width: 600rem) {
+    .dwelling-table {
+      width: 70vw;
+    }
+  }
+  .piechart{
+    margin-top: 300px;
+    display: block;
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-image: conic-gradient(
+        pink 70deg, 
+        lightblue 0 235deg, 
+        orange 0);
+  }
+
+
+/*[data-component='healthcare-card-pdf'] {
+  .heading-text {
+    font-weight: bold;
+    font-size: 0.5rem !important;
+    line-height: 0.57rem;
+    color: $color-charcoal-light-25;
+  }
+  .webContainer{
+    height: 4.5 !important;
+  }
+  .pdfContainer{
+  height: 1.9rem !important;
+  }
+  .icon-class {
+    font-size: 0.7rem;
+    color: $color-persian-green !important;
+  }
+  .distance-text {
+    font-size: 0.3rem;
+    color: $color-charcoal-light-25;
+  }
+  .address-text {
+    font-size: 0.4rem;
+    line-height: 0.44rem;
+    color: $color-charcoal-light-25;
+  }
+  .rounded-top {
+    border: 1px solid $color-charcoal-light-75;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    padding: 0.3rem;
+  }
+  .rounded-bottom {
+    border: 1px solid $color-charcoal-light-75;
+    padding: 0.3rem;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
+[data-component='Demographics-card-pdf'] {
+  .demographics {
+    background: $color-persian-green-light-75;
+    padding: 0.7rem 0.2rem;
+    .heading {
+      font-size: 0.5rem;
+      color: $color-charcoal;
+    }
+
+    .mainText {
+      font-size: 1rem;
+      color: $color-persian-green;
+      font-weight: bold;
+    }
+  }
+  .secondDemographics {
+    padding: 0.6rem 0.2rem;
+    color: $color-charcoal;
+    .heading {
+      font-size: 0.55rem;
+    }
+    .content {
+      font-size: 0.4rem;
+      font-weight: bold;
+    }
+    .small-text {
+      font-size: 0.45rem;
+    }
+    .subtext {
+      font-size: 0.4rem;
+      color: $color-charcoal-light-50;
+    }
+    .border-right {
+      border-right: 1px solid $color-charcoal-light-50;
+      padding-right: 0.6rem !important;
+    }
+  }
+}
+[data-component='school-card-pdf'] {
+  .school-card-height {
+    min-height: 10.5rem;
+  }
+  .day-care-card-height {
+    min-height: 9.5rem;
+  }
+  .school-card-height-pdf {
+    min-height: 6rem;
+  }
+  .day-care-card-height-pdf {
+    min-height: 5rem;
+  }
+  .dot {
+    height: 5px;
+    width: 5px;
+    border-radius: 50% !important;
+  }
+  .border-persian {
+    border: 1px solid $color-persian-green;
+    border-radius: 0.3rem;
+  }
+  .border-light-75 {
+    border: 1px solid $color-charcoal-light-75;
+    border-radius: 0.3rem;
+  }
+}
+[data-component='grocery-card-pdf'] {
+  .web-minHeight {
+    min-height: 8rem;
+  }
+  .pdfHeight {
+    min-height: 4rem !important;
+  }
+  .border-left-gc {
+    border-left: 1px solid $color-charcoal-light-75;
+  }
+  .border-right-gc {
+    border-right: 1px solid $color-charcoal-light-75;
+  }
+  .border-top-gc {
+    border-top: 1px solid $color-charcoal-light-75;
+  }
+  .border-bottom-gc {
+    border-bottom: 1px solid $color-charcoal-light-75;
+  }
+}
+*/
+
