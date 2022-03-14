@@ -1,0 +1,238 @@
+.neighbour-name {
+    font-size: 1rem;
+  line-height: 1rem;
+    font-weight: bold;
+  }
+  .text-f-16 {
+    font-size: 1.6rem;
+  }
+  .text-f-13 {
+    font-size: 1.3rem !important;
+  }
+  .text-f-9 {
+    font-size: 0.9rem;
+  }
+  .text-f-10 {
+    font-size: 1rem !important;
+  }
+  .text-f-6-5 {
+    font-size: 0.65rem !important;
+  }
+  .text-f-7-5 {
+    font-size: 0.75rem !important;
+  }
+  .text-f-8-6 {
+    font-size: 0.86rem !important;
+  }
+  .font-weight-400 {
+    font-weight: 400 !important ;
+  }
+  .font-weight-500 {
+    font-weight: 500 !important;
+  }
+  .font-weight-600 {
+    font-weight: 600;
+  }
+  .font-weight-700 {
+    font-weight: 700;
+  }
+  .province-text {
+    font-size: 1rem !important;
+    line-height: 1rem;
+  }
+  .text-f-6 {
+    font-size: 0.6rem !important;
+  }
+  .text-f-4 {
+    font-size: 0.4rem !important;
+  }
+  .text-f-3 {
+    font-size: 0.3rem !important;
+  }
+  .text-f-5 {
+    font-size: 0.5rem !important;
+  }
+  .text-f-4-5 {
+    font-size: 0.45rem !important;
+  }
+  .secondary-data-more {
+    font-size: 3rem;
+    font-weight: bold;
+    min-height: 10.5rem;
+  }
+  .text-truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .sectionHeader {
+    border-bottom: 2px solid var(--color-persian-green);
+    padding-bottom: 0.4rem;
+    .icon {
+      font-size: 1rem !important;
+    }
+    .mainText {
+      font-size: 1rem;
+      color: $color-charcoal;
+      font-weight: 400;
+    }
+    .subtext {
+      font-size: 0.8rem;
+      color: $color-persian-green;
+    }
+  }
+  
+  [data-component='real-estate-card-pdf'] {
+    .dwelling-table {
+      overflow: auto;
+      .heading {
+        font-size: 0.4rem;
+        color: $color-charcoal;
+        font-weight: 600;
+      }
+      .border-dotted {
+        border-bottom: 0.6px dotted $color-charcoal-light-50;
+      }
+      .content {
+        font-size: 0.35rem;
+        color: $color-charcoal-light-50;
+      }
+    }
+  
+    .chart-background {
+      background: #f8ddae;
+    }
+    @media only screen and (max-width: 600rem) {
+      .dwelling-table {
+        width: 70vw;
+      }
+    }
+  }
+  
+  [data-component='healthcare-card-pdf'] {
+    .heading-text {
+      font-weight: bold;
+      font-size: 0.5rem !important;
+      line-height: 0.57rem;
+      color: $color-charcoal-light-25;
+    }
+    .webContainer{
+      height: 4.5 !important;
+    }
+    .pdfContainer{
+    height: 1.9rem !important;
+    }
+    .icon-class {
+      font-size: 0.7rem;
+      color: $color-persian-green !important;
+    }
+    .distance-text {
+      font-size: 0.3rem;
+      color: $color-charcoal-light-25;
+    }
+    .address-text {
+      font-size: 0.4rem;
+      line-height: 0.44rem;
+      color: $color-charcoal-light-25;
+    }
+    .rounded-top {
+      border: 1px solid $color-charcoal-light-75;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      padding: 0.3rem;
+    }
+    .rounded-bottom {
+      border: 1px solid $color-charcoal-light-75;
+      padding: 0.3rem;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+  }
+  [data-component='Demographics-card-pdf'] {
+    .demographics {
+      background: $color-persian-green-light-75;
+      padding: 0.7rem 0.2rem;
+      .heading {
+        font-size: 0.5rem;
+        color: $color-charcoal;
+      }
+  
+      .mainText {
+        font-size: 1rem;
+        color: $color-persian-green;
+        font-weight: bold;
+      }
+    }
+    .secondDemographics {
+      padding: 0.6rem 0.2rem;
+      color: $color-charcoal;
+      .heading {
+        font-size: 0.55rem;
+      }
+      .content {
+        font-size: 0.4rem;
+        font-weight: bold;
+      }
+      .small-text {
+        font-size: 0.45rem;
+      }
+      .subtext {
+        font-size: 0.4rem;
+        color: $color-charcoal-light-50;
+      }
+      .border-right {
+        border-right: 1px solid $color-charcoal-light-50;
+        padding-right: 0.6rem !important;
+      }
+    }
+  }
+  [data-component='school-card-pdf'] {
+    .school-card-height {
+      min-height: 10.5rem;
+    }
+    .day-care-card-height {
+      min-height: 9.5rem;
+    }
+    .school-card-height-pdf {
+      min-height: 6rem;
+    }
+    .day-care-card-height-pdf {
+      min-height: 5rem;
+    }
+    .dot {
+      height: 5px;
+      width: 5px;
+      border-radius: 50% !important;
+    }
+    .border-persian {
+      border: 1px solid $color-persian-green;
+      border-radius: 0.3rem;
+    }
+    .border-light-75 {
+      border: 1px solid $color-charcoal-light-75;
+      border-radius: 0.3rem;
+    }
+  }
+  [data-component='grocery-card-pdf'] {
+    .web-minHeight {
+      min-height: 8rem;
+    }
+    .pdfHeight {
+      min-height: 4rem !important;
+    }
+    .border-left-gc {
+      border-left: 1px solid $color-charcoal-light-75;
+    }
+    .border-right-gc {
+      border-right: 1px solid $color-charcoal-light-75;
+    }
+    .border-top-gc {
+      border-top: 1px solid $color-charcoal-light-75;
+    }
+    .border-bottom-gc {
+      border-bottom: 1px solid $color-charcoal-light-75;
+    }
+  }
+  
