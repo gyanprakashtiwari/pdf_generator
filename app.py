@@ -41,7 +41,9 @@ def get_pdf():
         return {"msg":"some error in generating pdf"}
        
     
-    return {"msg":"pdf report generated successfully"}
+    # return {"msg":"pdf report generated successfully"}
+    return all_data
+
 
 
 
