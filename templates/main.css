@@ -82,6 +82,11 @@
     font-size: 1.3rem !important;
     font-weight: 600;
   }
+  @media only screen and (max-width:1115px){
+    .neighbour-name{
+         margin-left:-2em;
+    }
+  }
 
 
   /*overview card */
@@ -193,23 +198,30 @@
   .year{
     margin-top: -30px;
   }
-  .piechart{
-    width:30px;
-    height:100px;
-    border-radius: 50%;
-    background-color: #000000;
+  #donut_single{
+    margin-left:3em;
+    margin-top:-2.5em
   }
+
+ 
+
+
+  
+  
+ 
   
 
   /*demographics*/
   .demographics {
     background-color: var(--color-persian-green-light-75);
-    padding: 0.9rem 0.2rem;
+    padding-left: 0.9rem 0.2rem;
+    height:9rem;
   }
     .dheading {
-      font-size: 1rem;
+      font-size: 1.1rem;
       color: var(--color-charcoal);
-      font-weight: 600;
+      font-weight: 500;
+      margin-top:1rem;
     }
 
     .maintext {
@@ -221,6 +233,11 @@
     .yellow{
      background-color:  #E9C46A;
     }
+    .dsectionHeader {
+      border-bottom: 4px solid var(--color-persian-green);
+      padding-bottom: 0.7rem;
+    }
+   
 
   /*seconddemographics*/
   .secondDemographics {
@@ -229,15 +246,15 @@
     color: var(--color-charcoal);
   }
     .sdheading {
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 500;
     }
     .sdcontent {
       font-size: 0.8rem;
-      font-weight: bold;
+      font-weight: 700;
     }
     .sdsmall-text {
-      font-size: 0.45rem;
+      font-size: 0.43rem;
       color:var(--color-charcoal)
     }
     .sdsubtext {
@@ -248,11 +265,18 @@
       border-right: 1px solid var(--color-charcoal-light-50);
       padding-right: 0.6rem !important;
     }
+    @media only screen and (max-width:1115px){
+      
+     .sdheading{
+       font-size:.95rem !important
+     }
+      
+    }
 
     /*Healthcare*/
 
     .hheading {
-      font-size: 2rem;
+      font-size: 2.1rem;
       font-weight: 400;
       color:var(--color-charcoal);
       padding-left:.8rem;
@@ -263,7 +287,7 @@
       padding-left: 1rem;
     }
     .text-f-5 {
-      font-size: 1.1rem !important;
+      font-size: 1.05rem !important;
     }
     .pdfContainer{
       height: 5rem !important;
@@ -348,6 +372,28 @@
         color: var(--color-persian-green);
 
       }
+      .setext-f-6 {
+        font-size: 1.4rem !important;
+        font-weight: 600;
+      }
+      @media only screen and (max-width:1115px){
+        .cli{
+          width: 28% !important;
+        }
+        .phar{
+          width:29%!important;
+           
+        }
+        
+
+        .hlt{
+          width:28% !important
+        }
+        .more{
+          margin-left:-1em;
+        }
+        
+      }
 
 
       /*Day care*/
@@ -370,21 +416,32 @@
         min-width: 16rem
       }
       .border-left-gc {
-        border-left: 1px solid var(--color-charcoal-light-75);
+        border-left: 2px solid var(--color-charcoal-light-75);
       }
       .border-right-gc {
-        border-right: 1px solid var(--color-charcoal-light-75);
+        border-right: 2px solid var(--color-charcoal-light-75);
       }
       .border-top-gc {
-        border-top: 1px solid var(--color-charcoal-light-75);
+        border-top: 2px solid var(--color-charcoal-light-75);
       }
       .border-bottom-gc {
-        border-bottom: 1px solid var(--color-charcoal-light-75);
+        border-bottom: 2px solid var(--color-charcoal-light-75);
       }
 
       .bg-color-persian-green-light-50{
         background-color: var(--color-persian-green-light-50);
       }
+      .gtext-f-4 {
+        font-size: 1.3rem !important;
+      }
+      .color-75{
+        color:var(--color-charcoal-light-50)
+      }
+     
+        
+        
+      
+     
     
     
     
