@@ -1192,256 +1192,84 @@
                             <img src="{{templates_path}}/full-report-icons/day_care-b.svg" width="45px" height="45px" class="ml-1" />
                             <div class="smain-text">Day Care</div>
                         </div>
-
                         <div class="subtext">
                             4 more
                         </div>
-
                     </div>
-
                     <section style="margin-top:1em">
                         <div>
-
                             <div class="row m-0 mt-2">
-
-                                <div style="width: 23.4% " class="pl-2">
-                                    <div>
-                                        <div
-                                            class='d-flex flex-column justify-content-between p-2  rounded1 bg-color-charcoal border-none dschool-card-height-pdf'>
-
-
-                                            <div style="margin-left:.7em">
-                                                <div class='d-none'>
-
-                                                    <div class="d-flex align-items-center mr-1">
-                                                        <div class="bg-color-persian-green dot"></div>
-                                                        <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                            style="padding-left:.6em ;font-weight: 700;">
-                                                            French
+                                {% if data["daycare"]["closest_facility"]|length>0 %}
+                                    {% for item in  data["daycare"]["closest_facility"] %}
+                                        <div style="width: 23.4% " class="pl-2">
+                                            <div>
+                                                <div
+                                                    class='d-flex flex-column justify-content-between p-2  rounded1 bg-color-charcoal border-none dschool-card-height-pdf'>
+                                                    <div style="margin-left:.7em">
+                                                        <div class='d-none'>
+                                                            <div class="d-flex align-items-center mr-1">
+                                                                <div class="bg-color-persian-green dot"></div>
+                                                                <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
+                                                                    style="padding-left:.6em ;font-weight: 700;">
+                                                                    French
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex align-items-center mr-1"
+                                                                style="margin-left:1rem">
+                                                                <div class="bg-color-persian-green dot"></div>
+                                                                <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
+                                                                    style="margin-left:.6em; font-weight:700">
+                                                                    Public
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class='text-f-6 text-wrap text-break text-truncate-2 
+                                                text-white ' style='font-weight:700;'>
+                                                            {{item["name"]}}
+                                                        </div>
+                                                        <div class='text-wrap text-break  text-truncate-2 text-white text-f-6 font-weight-400'
+                                                            style="font-weight:400">
+                                                            {{item["address"]}}
                                                         </div>
                                                     </div>
-
-                                                    <div class="d-flex align-items-center mr-1"
-                                                        style="margin-left:1rem">
-                                                        <div class="bg-color-persian-green dot"></div>
-                                                        <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                            style="margin-left:.6em; font-weight:700">
-                                                            Public
+                                                    <div class='d-flex flex-wrap justify-content-between mt-2'
+                                                        style="margin-left:.7em">
+                                                        <div style="padding-left:-.3em">
+                                                            <img src='{{templates_path}}/full-report-icons/location.svg' width="32px"
+                                                                height="32px" />
+        
+                                                            <div class="text-f-4 text-white font-weight-400">
+                                                                {{item["walk"]["distance"]}}km
+                                                            </div>
                                                         </div>
-                                                    </div>
-
-
-
-
-                                                </div>
-                                                <div class='text-f-6 text-wrap text-break text-truncate-2 
-                                           text-white ' style='font-weight:700;'>
-                                                    St. Dominic School
-                                                </div>
-                                                <div class='text-wrap text-break  text-truncate-2 text-white text-f-6 font-weight-400'
-                                                    style="font-weight:400">
-                                                    2300 Estet K343 kll
-                                                </div>
-                                            </div>
-                                            <div class='d-flex flex-wrap justify-content-between mt-2'
-                                                style="margin-left:.7em">
-
-
-
-                                                <div style="padding-left:-.3em">
-                                                    <img src='{{templates_path}}/full-report-icons/location.svg' width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4 text-white font-weight-400">
-                                                        4km
-                                                    </div>
-                                                </div>
-                                                <div style="padding-left:-.3em">
-                                                    <img src='{{templates_path}}/full-report-icons/walk.svg' width="32px" height="32px" />
-
-                                                    <div class="text-f-4  text-white" style=" font-weight:400">
-                                                        4mins
-                                                    </div>
-                                                </div>
-                                                <div style="padding-left:-.3em">
-                                                    <img src='{{templates_path}}/full-report-icons/car.svg' width="32px" height="32px" />
-
-                                                    <div class="text-f-4 text-white  font-weight-400">
-                                                        5mins
-                                                    </div>
-                                                </div>
-                                                <div style="padding-right:1em">
-                                                    <img src='{{templates_path}}/full-report-icons/bike.svg' width="32px" height="32px" />
-
-                                                    <div class="text-f-4 text-white  font-weight-400">
-                                                        6mins
+                                                        <div style="padding-left:-.3em">
+                                                            <img src='{{templates_path}}/full-report-icons/walk.svg' width="32px" height="32px" />
+        
+                                                            <div class="text-f-4  text-white" style=" font-weight:400">
+                                                                {{item["walk"]["time"]}}mins
+                                                            </div>
+                                                        </div>
+                                                        <div style="padding-left:-.3em">
+                                                            <img src='{{templates_path}}/full-report-icons/car.svg' width="32px" height="32px" />
+        
+                                                            <div class="text-f-4 text-white  font-weight-400">
+                                                                {{item["drive"]["time"]}}mins
+                                                            </div>
+                                                        </div>
+                                                        <div style="padding-right:1em">
+                                                            <img src='{{templates_path}}/full-report-icons/bike.svg' width="32px" height="32px" />
+        
+                                                            <div class="text-f-4 text-white  font-weight-400">
+                                                                {{item["walk"]["time"]}}mins
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-
-
-                                </div>
-                                <div style="width: 23.4% " class="pl-2">
-                                    <div>
-                                        <div
-                                            class='d-flex flex-column justify-content-between p-2  rounded1 bg-color-charcoal border-none dschool-card-height-pdf'>
-
-
-                                            <div style="margin-left:.7em">
-                                                <div class='d-none'>
-
-                                                    <div class="d-flex align-items-center mr-1">
-                                                        <div class="bg-color-persian-green dot"></div>
-                                                        <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                            style="padding-left:.6em ;font-weight: 700;">
-                                                            French
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="d-flex align-items-center mr-1"
-                                                        style="margin-left:1rem">
-                                                        <div class="bg-color-persian-green dot"></div>
-                                                        <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                            style="margin-left:.6em; font-weight:700">
-                                                            Public
-                                                        </div>
-                                                    </div>
-
-
-
-
-                                                </div>
-                                                <div class='text-f-6 text-wrap text-break text-truncate-2 
-                                           text-white ' style='font-weight:700;'>
-                                                    St. Dominic School
-                                                </div>
-                                                <div class='text-wrap text-break  text-truncate-2 text-white text-f-6 font-weight-400'
-                                                    style="font-weight:400">
-                                                    2300 Estet K343 kll
-                                                </div>
-                                            </div>
-                                            <div class='d-flex flex-wrap justify-content-between mt-2'
-                                                style="margin-left:.7em">
-
-
-
-                                                <div style="padding-left:-.3em">
-                                                    <img src='{{templates_path}}/full-report-icons/location.svg' width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4 text-white font-weight-400">
-                                                        4km
-                                                    </div>
-                                                </div>
-                                                <div style="padding-left:-.3em">
-                                                    <img src='{{templates_path}}/full-report-icons/walk.svg' width="32px" height="32px" />
-
-                                                    <div class="text-f-4  text-white" style=" font-weight:400">
-                                                        4mins
-                                                    </div>
-                                                </div>
-                                                <div style="padding-left:-.3em">
-                                                    <img src='{{templates_path}}/full-report-icons/car.svg' width="32px" height="32px" />
-
-                                                    <div class="text-f-4 text-white  font-weight-400">
-                                                        5mins
-                                                    </div>
-                                                </div>
-                                                <div style="padding-right:1em">
-                                                    <img src='{{templates_path}}/full-report-icons/bike.svg' width="32px" height="32px" />
-
-                                                    <div class="text-f-4 text-white  font-weight-400">
-                                                        6mins
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                                <div style="width: 23.4% " class="pl-2">
-                                    <div>
-                                        <div
-                                            class='d-flex flex-column justify-content-between p-2  rounded1 bg-color-charcoal border-none dschool-card-height-pdf'>
-
-
-                                            <div style="margin-left:.7em">
-                                                <div class='d-none'>
-
-                                                    <div class="d-flex align-items-center mr-1">
-                                                        <div class="bg-color-persian-green dot"></div>
-                                                        <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                            style="padding-left:.6em ;font-weight: 700;">
-                                                            French
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="d-flex align-items-center mr-1"
-                                                        style="margin-left:1rem">
-                                                        <div class="bg-color-persian-green dot"></div>
-                                                        <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                            style="margin-left:.6em; font-weight:700">
-                                                            Public
-                                                        </div>
-                                                    </div>
-
-
-
-
-                                                </div>
-                                                <div class='text-f-6 text-wrap text-break text-truncate-2 
-                                           text-white ' style='font-weight:700;'>
-                                                    St. Dominic School
-                                                </div>
-                                                <div class='text-wrap text-break  text-truncate-2 text-white text-f-6 font-weight-400'
-                                                    style="font-weight:400">
-                                                    2300 Estet K343 kll
-                                                </div>
-                                            </div>
-                                            <div class='d-flex flex-wrap justify-content-between mt-2'
-                                                style="margin-left:.7em">
-
-
-
-                                                <div style="padding-left:-.3em">
-                                                    <img src='{{templates_path}}/full-report-icons/location.svg' width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4 text-white font-weight-400">
-                                                        4km
-                                                    </div>
-                                                </div>
-                                                <div style="padding-left:-.3em">
-                                                    <img src='{{templates_path}}/full-report-icons/walk.svg' width="32px" height="32px" />
-
-                                                    <div class="text-f-4  text-white" style=" font-weight:400">
-                                                        4mins
-                                                    </div>
-                                                </div>
-                                                <div style="padding-left:-.3em">
-                                                    <img src='{{templates_path}}/full-report-icons/car.svg' width="32px" height="32px" />
-
-                                                    <div class="text-f-4 text-white  font-weight-400">
-                                                        5mins
-                                                    </div>
-                                                </div>
-                                                <div style="padding-right:1em">
-                                                    <img src='{{templates_path}}/full-report-icons/bike.svg' width="32px" height="32px" />
-
-                                                    <div class="text-f-4 text-white  font-weight-400">
-                                                        6mins
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-
+                                    {% endfor %}
+                                {% endif %}
+                                <!-- <p>ends here</p> -->
                             </div>
 
 
