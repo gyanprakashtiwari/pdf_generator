@@ -761,9 +761,7 @@
 
                             <div>
                                 <div>
-                                    {% if  %}
-                                        
-                                    {% endif %}
+                                   
                                     <div class="pdfContainer rounded-top rounded-bottom">
                                         <div class="d-flex justify-content-between align-items-center"
                                             style="margin-left:.3em">
@@ -819,12 +817,8 @@
                                         <div class="address-text text-break  text-truncate-2" style="margin-left:.3em">
                                             170 Vanguard Dr
                                         </div>
-
-
                                     </div>
-
                                 </div>
-
                             </div>
 
 
@@ -897,12 +891,8 @@
                                         <div class="address-text text-break  text-truncate-2" style="margin-left:.3em">
                                             170 Vanguard Dr
                                         </div>
-
-
                                     </div>
-
                                 </div>
-
                             </div>
 
 
@@ -994,13 +984,12 @@
                 <section class=" pr-md-3 mt-3" style="margin-left:.7em; margin-right:1.5em">
                     <div class="d-flex  justify-content-between align-items-end  " style="padding-left:1rem">
                         <div class="d-flex align-items-center   color-charcoal ">
-                            <img src="{{templates_path}}/full-report-icons/school-b.svg" width="50px" height="50px" class="mr-1" />
+                            <img src="{{templates_path}}/full-report-icons/school.svg" width="50px" height="50px" class="mr-1" />
                             <div class=" smain-text">Schools</div>
                         </div>
                     </div>
                     <div class="ssectionHeader " style="padding-left:1rem"></div>
                     <section>
-
                         <div style="margin-left:1rem">
                             <div
                                 class="d-flex flex-wrap justify-content-between align-items-end text-f-8-6 color-charcoal">
@@ -1012,331 +1001,81 @@
                                 </div>
                             </div>
                             <div class="row  " style="margin-left:.7em">
+                                {% if data["ele_school"]["closest_facility"]|length>0 %}
+                                    {% for school in data["ele_school"]["closest_facility"]%}
+                                        <div style="width:23%" class="pl-2">
+                                        <div>
+                                            <div
+                                                class='d-flex flex-column justify-content-between p-2  border-light-75 school-card-height-pdf'>
+                                                <div style="margin-left:.6em">
+                                                    <div class='d-flex flex-wrap'>
 
-                                <div style="width:23%" class="pl-2">
-                                    <div>
-                                        <div
-                                            class='d-flex flex-column justify-content-between p-2  border-light-75 school-card-height-pdf'>
+                                                        <div class="d-flex align-items-center mr-1">
+                                                            <div class="bg-color-persian-green dot"></div>
+                                                            <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
+                                                                style="padding-left:.6em ;font-weight: 700;">
+                                                                French
+                                                            </div>
+                                                        </div>
 
-
-                                            <div style="margin-left:.6em">
-                                                <div class='d-flex flex-wrap'>
-
-                                                    <div class="d-flex align-items-center mr-1">
-                                                        <div class="bg-color-persian-green dot"></div>
-                                                        <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                            style="padding-left:.6em ;font-weight: 700;">
-                                                            French
+                                                        <div class="d-flex align-items-center mr-1"
+                                                            style="margin-left:1rem">
+                                                            <div class="bg-color-persian-green dot"></div>
+                                                            <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
+                                                                style="margin-left:.6em; font-weight:700">
+                                                                Public
+                                                            </div>
                                                         </div>
                                                     </div>
+                                                    <div class='text-f-6 text-wrap text-break text-truncate-2 
+                                            color-charcoal ' style='font-weight:700'>
+                                                        {{school["name"]}}
+                                                    </div>
+                                                    <div class='text-wrap text-break  text-truncate-2 color-charcoal-light-25 text-f-6 font-weight-400'
+                                                        style="font-weight:400">
+                                                        {{school["address"]}}
+                                                    </div>
+                                                </div>
+                                                <div class='d-flex flex-wrap justify-content-between mt-2'>
+                                                    <div style="margin-left:.8em">
+                                                        <img src="{{templates_path}}/full-report-icons/location-g.svg" width="32px"
+                                                            height="32px" />
 
-                                                    <div class="d-flex align-items-center mr-1"
-                                                        style="margin-left:1rem">
-                                                        <div class="bg-color-persian-green dot"></div>
-                                                        <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                            style="margin-left:.6em; font-weight:700">
-                                                            Public
+                                                        <div class="text-f-4  font-weight-400">
+                                                            {{school["walk"]["distance"]}}km
                                                         </div>
                                                     </div>
+                                                    <div style="margin-left:-.8em">
+                                                        <img src="{{templates_path}}/full-report-icons/walk-g.svg" width="32px"
+                                                            height="32px" />
 
-
-
-
-                                                </div>
-                                                <div class='text-f-6 text-wrap text-break text-truncate-2 
-                                           color-charcoal ' style='font-weight:700'>
-                                                    St. Dominic School
-                                                </div>
-                                                <div class='text-wrap text-break  text-truncate-2 color-charcoal-light-25 text-f-6 font-weight-400'
-                                                    style="font-weight:400">
-                                                    2300 Estet K343 kll
-                                                </div>
-                                            </div>
-                                            <div class='d-flex flex-wrap justify-content-between mt-2'>
-
-
-
-                                                <div style="margin-left:.8em">
-                                                    <img src="{{templates_path}}/full-report-icons/location-g.svg" width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4  font-weight-400">
-                                                        4km
+                                                        <div class="text-f-4 " style=" font-weight:400">
+                                                            {{school["walk"]["time"]}}mins
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div style="margin-left:-.8em">
-                                                    <img src="{{templates_path}}/full-report-icons/walk-g.svg" width="32px"
-                                                        height="32px" />
+                                                    <div style="margin-left:-.8em">
+                                                        <img src="{{templates_path}}/full-report-icons/car-g.svg" width="32px"
+                                                            height="32px" />
 
-                                                    <div class="text-f-4 " style=" font-weight:400">
-                                                        4mins
+                                                        <div class="text-f-4  font-weight-400">
+                                                            {{school["drive"]["time"]}}mins
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div style="margin-left:-.8em">
-                                                    <img src="{{templates_path}}/full-report-icons/car-g.svg" width="32px"
-                                                        height="32px" />
+                                                    <div style="margin-right:1em">
+                                                        <img src="{{templates_path}}/full-report-icons/bike-g.svg" width="32px"
+                                                            height="32px" />
 
-                                                    <div class="text-f-4  font-weight-400">
-                                                        5mins
-                                                    </div>
-                                                </div>
-                                                <div style="margin-right:1em">
-                                                    <img src="{{templates_path}}/full-report-icons/bike-g.svg" width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4  font-weight-400">
-                                                        6mins
+                                                        <div class="text-f-4  font-weight-400">
+                                                            {{school["drive"]["time"]}}mins
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-
-                                </div>
-                                <div style="width:23%" class="pl-2">
-                                    <div>
-                                        <div
-                                            class='d-flex flex-column justify-content-between p-2  border-light-75 school-card-height-pdf'>
-
-
-                                            <div style="margin-left:.6em">
-                                                <div class='d-flex flex-wrap'>
-
-                                                    <div class="d-flex align-items-center mr-1">
-                                                        <div class="bg-color-persian-green dot"></div>
-                                                        <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                            style="padding-left:.6em ;font-weight: 700;">
-                                                            French
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="d-flex align-items-center mr-1"
-                                                        style="margin-left:1rem">
-                                                        <div class="bg-color-persian-green dot"></div>
-                                                        <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                            style="margin-left:.6em; font-weight:700">
-                                                            Public
-                                                        </div>
-                                                    </div>
-
-
-
-
-                                                </div>
-                                                <div class='text-f-6 text-wrap text-break text-truncate-2 
-                                           color-charcoal ' style='font-weight:700'>
-                                                    St. Dominic School
-                                                </div>
-                                                <div class='text-wrap text-break  text-truncate-2 color-charcoal-light-25 text-f-6 font-weight-400'
-                                                    style="font-weight:400">
-                                                    2300 Estet K343 kll
-                                                </div>
-                                            </div>
-                                            <div class='d-flex flex-wrap justify-content-between mt-2'>
-
-
-
-                                                <div style="margin-left:.8em">
-                                                    <img src="{{templates_path}}/full-report-icons/location-g.svg" width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4  font-weight-400">
-                                                        4km
-                                                    </div>
-                                                </div>
-                                                <div style="margin-left:-.5em">
-                                                    <img src="{{templates_path}}/full-report-icons/walk-g.svg" width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4 " style=" font-weight:400">
-                                                        4mins
-                                                    </div>
-                                                </div>
-                                                <div style="margin-left:-.8em">
-                                                    <img src="{{templates_path}}/full-report-icons/car-g.svg" width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4  font-weight-400">
-                                                        5mins
-                                                    </div>
-                                                </div>
-                                                <div style="margin-right:1em">
-                                                    <img src="{{templates_path}}/full-report-icons/bike-g.svg" width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4  font-weight-400">
-                                                        6mins
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                                <div style="width:23%" class="pl-2">
-                                    <div>
-                                        <div
-                                            class='d-flex flex-column justify-content-between p-2  border-light-75 school-card-height-pdf'>
-
-
-                                            <div style="margin-left:.6em">
-                                                <div class='d-flex flex-wrap'>
-
-                                                    <div class="d-flex align-items-center mr-1">
-                                                        <div class="bg-color-persian-green dot"></div>
-                                                        <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                            style="padding-left:.6em ;font-weight: 700;">
-                                                            French
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="d-flex align-items-center mr-1"
-                                                        style="margin-left:1rem">
-                                                        <div class="bg-color-persian-green dot"></div>
-                                                        <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                            style="margin-left:.6em; font-weight:700">
-                                                            Public
-                                                        </div>
-                                                    </div>
-
-
-
-
-                                                </div>
-                                                <div class='text-f-6 text-wrap text-break text-truncate-2 
-                                           color-charcoal ' style='font-weight:700'>
-                                                    St. Dominic School
-                                                </div>
-                                                <div class='text-wrap text-break  text-truncate-2 color-charcoal-light-25 text-f-6 font-weight-400'
-                                                    style="font-weight:400">
-                                                    2300 Estet K343 kll
-                                                </div>
-                                            </div>
-                                            <div class='d-flex flex-wrap justify-content-between mt-2'>
-
-
-
-                                                <div style="margin-left:.8em">
-                                                    <img src="{{templates_path}}/full-report-icons/location-g.svg" width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4  font-weight-400">
-                                                        4km
-                                                    </div>
-                                                </div>
-                                                <div style="margin-left:-.5em">
-                                                    <img src="{{templates_path}}/full-report-icons/walk-g.svg" width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4 " style=" font-weight:400">
-                                                        4mins
-                                                    </div>
-                                                </div>
-                                                <div style="margin-left:-.8em">
-                                                    <img src="{{templates_path}}/full-report-icons/car-g.svg" width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4  font-weight-400">
-                                                        5mins
-                                                    </div>
-                                                </div>
-                                                <div style="margin-right:1em">
-                                                    <img src="{{templates_path}}/full-report-icons/bike-g.svg" width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4  font-weight-400">
-                                                        6mins
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                                <div style="width:23%" class="pl-2">
-                                    <div>
-                                        <div
-                                            class='d-flex flex-column justify-content-between p-2  border-light-75 school-card-height-pdf'>
-
-
-                                            <div style="margin-left:.6em">
-                                                <div class='d-flex flex-wrap'>
-
-                                                    <div class="d-flex align-items-center mr-1">
-                                                        <div class="bg-color-persian-green dot"></div>
-                                                        <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                            style="padding-left:.6em ;font-weight: 700;">
-                                                            French
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="d-flex align-items-center mr-1"
-                                                        style="margin-left:1rem">
-                                                        <div class="bg-color-persian-green dot"></div>
-                                                        <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                            style="margin-left:.6em; font-weight:700">
-                                                            Public
-                                                        </div>
-                                                    </div>
-
-
-
-
-                                                </div>
-                                                <div class='text-f-6 text-wrap text-break text-truncate-2 
-                                           color-charcoal ' style='font-weight:700'>
-                                                    St. Dominic School
-                                                </div>
-                                                <div class='text-wrap text-break  text-truncate-2 color-charcoal-light-25 text-f-6 font-weight-400'
-                                                    style="font-weight:400">
-                                                    2300 Estet K343 kll
-                                                </div>
-                                            </div>
-                                            <div class='d-flex flex-wrap justify-content-between mt-2'>
-
-
-
-                                                <div style="margin-left:.8em">
-                                                    <img src="{{templates_path}}/full-report-icons/location-g.svg" width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4  font-weight-400">
-                                                        4km
-                                                    </div>
-                                                </div>
-                                                <div style="margin-left:-.5em">
-                                                    <img src="{{templates_path}}/full-report-icons/walk-g.svg" width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4 " style=" font-weight:400">
-                                                        4mins
-                                                    </div>
-                                                </div>
-                                                <div style="margin-left:-.8em">
-                                                    <img src="{{templates_path}}/full-report-icons/car-g.svg" width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4  font-weight-400">
-                                                        5mins
-                                                    </div>
-                                                </div>
-                                                <div style="margin-right:1em">
-                                                    <img src="{{templates_path}}/full-report-icons/bike-g.svg" width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4  font-weight-400">
-                                                        6mins
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
+                                    {% endfor %}
+                                {% endif %}
+                                
                             </div>
                         </div>
 
@@ -1352,254 +1091,83 @@
                             </div>
                             <div class="row " style="margin-left:.7em">
 
-                                <div style="width:25%" class="pl-2">
-                                    <div style="margin-left:1em">
-                                        <div
-                                            class='d-flex flex-column justify-content-between p-2 bg-color-persian-green-light-25 school-card-height-pdf border-persian'>
-
-
-                                            <div style="margin-left:.6em">
-                                                <div class='d-flex flex-wrap'>
-
-                                                    <div class="d-flex align-items-center mr-1">
-                                                        <div class="bg-color-persian-green dot"></div>
-                                                        <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                            style="padding-left:.6em ;font-weight: 700;">
-                                                            French
+                                {% if data["sec_school"]["closest_facility"]|length>0 %}
+                                    {% for school in data["sec_school"]["closest_facility"] %}
+                                        <div style="width:25%" class="pl-2">
+                                            <div style="margin-left:1em">
+                                                <div
+                                                    class='d-flex flex-column justify-content-between p-2 bg-color-persian-green-light-25 school-card-height-pdf border-persian'>
+                                                    <div style="margin-left:.6em">
+                                                        <div class='d-flex flex-wrap'>
+                                                            <div class="d-flex align-items-center mr-1">
+                                                                <div class="bg-color-persian-green dot"></div>
+                                                                <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
+                                                                    style="padding-left:.6em ;font-weight: 700;">
+                                                                    French
+                                                                </div>
+                                                            </div>
+                                                            <div class="d-flex align-items-center mr-1"
+                                                                style="margin-left:1rem">
+                                                                <div class="bg-color-persian-green dot"></div>
+                                                                <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
+                                                                    style="margin-left:.6em; font-weight:700">
+                                                                    Public
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class='setext-f-6 text-wrap text-break text-truncate-2 color-charcol'
+                                                            style='font-weight:700 ;'>
+                                                            {{school["name"]}}
+                                                        </div>
+                                                        <div class='text-wrap text-break  text-truncate-2 color-charcoal-light-25 text-f-6 font-weight-400'
+                                                            style="font-weight:400">
+                                                            {{school["address"]}}
                                                         </div>
                                                     </div>
-
-                                                    <div class="d-flex align-items-center mr-1"
-                                                        style="margin-left:1rem">
-                                                        <div class="bg-color-persian-green dot"></div>
-                                                        <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                            style="margin-left:.6em; font-weight:700">
-                                                            Public
+                                                    <div class='d-flex flex-wrap justify-content-between mt-2'
+                                                        style="margin-left:.6em">
+                                                        <div style="margin-left:.3em">
+                                                            <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px"
+                                                                height="32px" />
+        
+                                                            <div class="text-f-4  font-weight-400">
+                                                                {{school["walk"]["distance"]}}km
+                                                            </div>
                                                         </div>
-                                                    </div>
-
-
-
-
-                                                </div>
-                                                <div class='setext-f-6 text-wrap text-break text-truncate-2 color-charcol'
-                                                    style='font-weight:700 ;'>
-                                                    St. Dominic School
-                                                </div>
-                                                <div class='text-wrap text-break  text-truncate-2 color-charcoal-light-25 text-f-6 font-weight-400'
-                                                    style="font-weight:400">
-                                                    2300 Estet K343 kll
-                                                </div>
-                                            </div>
-                                            <div class='d-flex flex-wrap justify-content-between mt-2'
-                                                style="margin-left:.6em">
-
-
-
-                                                <div style="margin-left:.3em">
-                                                    <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4  font-weight-400">
-                                                        4km
-                                                    </div>
-                                                </div>
-                                                <div style="margin-left:.6em">
-
-                                                    <img src='{{templates_path}}/full-report-icons/walk-g.svg' width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4 " style=" font-weight:400">
-                                                        4mins
-                                                    </div>
-                                                </div>
-                                                <div style="margin-left:.5em">
-                                                    <img src='{{templates_path}}/full-report-icons/car-g.svg' width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4  font-weight-400">
-                                                        5mins
-                                                    </div>
-                                                </div>
-                                                <div style="margin-right:.8em">
-                                                    <img src='{{templates_path}}/full-report-icons/bike-g.svg' width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4  font-weight-400">
-                                                        6mins
+                                                        <div style="margin-left:.6em">
+        
+                                                            <img src='{{templates_path}}/full-report-icons/walk-g.svg' width="32px"
+                                                                height="32px" />
+        
+                                                            <div class="text-f-4 " style=" font-weight:400">
+                                                                {{school["walk"]["time"]}}mins
+                                                            </div>
+                                                        </div>
+                                                        <div style="margin-left:.5em">
+                                                            <img src='{{templates_path}}/full-report-icons/car-g.svg' width="32px"
+                                                                height="32px" />
+        
+                                                            <div class="text-f-4  font-weight-400">
+                                                                {{school["drive"]["time"]}}mins
+                                                            </div>
+                                                        </div>
+                                                        <div style="margin-right:.8em">
+                                                            <img src='{{templates_path}}/full-report-icons/bike-g.svg' width="32px"
+                                                                height="32px" />
+        
+                                                            <div class="text-f-4  font-weight-400">
+                                                                {{school["walk"]["time"]}}mins
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
+        
                                         </div>
-                                    </div>
-
-                                </div>
-
-                                <div style="width:25%" class="pl-2">
-                                    <div style="margin-left:1em">
-                                        <div
-                                            class='d-flex flex-column justify-content-between p-2 bg-color-persian-green-light-25 school-card-height-pdf border-persian'>
-
-
-                                            <div style="margin-left:.6em">
-                                                <div class='d-flex flex-wrap'>
-
-                                                    <div class="d-flex align-items-center mr-1">
-                                                        <div class="bg-color-persian-green dot"></div>
-                                                        <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                            style="padding-left:.6em ;font-weight: 700;">
-                                                            French
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="d-flex align-items-center mr-1"
-                                                        style="margin-left:1rem">
-                                                        <div class="bg-color-persian-green dot"></div>
-                                                        <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                            style="margin-left:.6em; font-weight:700">
-                                                            Public
-                                                        </div>
-                                                    </div>
-
-
-
-
-                                                </div>
-                                                <div class='setext-f-6 text-wrap text-break text-truncate-2 
-                                           color-charcol ' style='font-weight:700'>
-                                                    St. Dominic School
-                                                </div>
-                                                <div class='text-wrap text-break  text-truncate-2 color-charcoal-light-25 text-f-6 font-weight-400'
-                                                    style="font-weight:400">
-                                                    2300 Estet K343 kll
-                                                </div>
-                                            </div>
-                                            <div class='d-flex flex-wrap justify-content-between mt-2'
-                                                style="margin-left:.6em">
-
-
-
-                                                <div style="margin-left:.3em">
-                                                    <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4  font-weight-400">
-                                                        4km
-                                                    </div>
-                                                </div>
-                                                <div style="margin-left:.6em">
-
-                                                    <img src='{{templates_path}}/full-report-icons/walk-g.svg' width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4 " style=" font-weight:400">
-                                                        4mins
-                                                    </div>
-                                                </div>
-                                                <div style="margin-left:.5em">
-                                                    <img src='{{templates_path}}/full-report-icons/car-g.svg' width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4  font-weight-400">
-                                                        5mins
-                                                    </div>
-                                                </div>
-                                                <div style="margin-right:.8em">
-                                                    <img src='{{templates_path}}/full-report-icons/bike-g.svg' width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4  font-weight-400">
-                                                        6mins
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div style="width:25%" class="pl-2">
-                                    <div style="margin-left:1em">
-                                        <div
-                                            class='d-flex flex-column justify-content-between p-2 bg-color-persian-green-light-25 school-card-height-pdf border-persian'>
-
-
-                                            <div style="margin-left:.6em">
-                                                <div class='d-flex flex-wrap'>
-
-                                                    <div class="d-flex align-items-center mr-1">
-                                                        <div class="bg-color-persian-green dot"></div>
-                                                        <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                            style="padding-left:.6em ;font-weight: 700;">
-                                                            French
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="d-flex align-items-center mr-1"
-                                                        style="margin-left:1rem">
-                                                        <div class="bg-color-persian-green dot"></div>
-                                                        <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                            style="margin-left:.6em; font-weight:700">
-                                                            Public
-                                                        </div>
-                                                    </div>
-
-
-
-
-                                                </div>
-                                                <div class='setext-f-6 text-wrap text-break text-truncate-2  color-charcol
-                                            ' style='font-weight:700'>
-                                                    St. Dominic School
-                                                </div>
-                                                <div class='text-wrap text-break  text-truncate-2 color-charcoal-light-25 text-f-6 font-weight-400'
-                                                    style="font-weight:400">
-                                                    2300 Estet K343 kll
-                                                </div>
-                                            </div>
-                                            <div class='d-flex flex-wrap justify-content-between mt-2'
-                                                style="margin-left:.6em">
-
-
-
-                                                <div style="margin-left:.3em">
-                                                    <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4  font-weight-400">
-                                                        4km
-                                                    </div>
-                                                </div>
-                                                <div style="margin-left:.6em">
-
-                                                    <img src='{{templates_path}}/full-report-icons/walk-g.svg' width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4 " style=" font-weight:400">
-                                                        4mins
-                                                    </div>
-                                                </div>
-                                                <div style="margin-left:.5em">
-                                                    <img src='{{templates_path}}/full-report-icons/car-g.svg' width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4  font-weight-400">
-                                                        5mins
-                                                    </div>
-                                                </div>
-                                                <div style="margin-right:.8em">
-                                                    <img src='{{templates_path}}/full-report-icons/bike-g.svg' width="32px"
-                                                        height="32px" />
-
-                                                    <div class="text-f-4  font-weight-400">
-                                                        6mins
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
+                                    {% endfor %}
+                                {% endif %}
+                                
+                                 
                             </div>
 
 
