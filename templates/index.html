@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Page Title</title>
     <!-- CSS only -->
@@ -21,6 +20,7 @@
         ]);
         var options = {
           pieHole: 0.7,
+          
           legend: 'none',
           slices:{
               0:{color: 'yellow'},
@@ -41,7 +41,7 @@
         <!--header-->
         <div class="justify-content-between align-items-center "
             style="margin-left:30px;margin-right: 30px; margin-top:10px;display:flex">
-            <img src="{{templates_path}}/Vector.png">
+            <img class="himg" src="{{templates_path}}/Vector.png">
             <div class="neighbour-name font-circuler-std text-wrap">
                 Ottawa-895, Ottawa
             </div>
@@ -63,8 +63,8 @@
                 </div>
                 <img style="width:62px; height:62px" class="border rounded-circle" crossorigin="anonymous" />
             </div>
-
         </div>
+
         <!--overview card-->
         <div style="margin-left:30px ; margin-right: 30px;margin-top: 20px;">
             <div class="p-2 u-bg row m-0">
@@ -78,7 +78,119 @@
                         <div class="mt-2 ml-2" style="width: 92%;">
                             <div class="d-flex justify-content-between align-items-center flex-wrap">
 
-                                {% if data["sec_school"]["closest_facility"]|length>0 %}
+                                {% if data["bar"]["closest_facility"]|length>0  %}
+                                    <div class="box1 d-flex">
+                                        <img src="{{templates_path}}/full-report-icons/bar.svg" style="
+                                            filter:
+                                            'invert(1%) sepia(90%) saturate(1852%) hue-rotate(350deg) brightness(101%) contrast(98%)';
+                                            height:33px ;width:33px" />
+                                        <div class="w-100   ml-1">
+                                            <div class="d-flex flex-wrap  justify-content-between w-100 align-items-center">
+                                                <div class="text-f-4 text-white font-weight-400 text-wrap item">
+                                                    Bar
+                                                </div>
+                                                <div class="d-flex flex-wrap mt-n1 item1" style="padding-left:5.8rem">
+                                                    {% for starcount in range(0,5)%}
+                                                         {% if starcount < (data["bar"]["facility_rating"]|int) %}
+                                                            <span class="fa fa-star checked"></span>
+                                                         {% else %}
+                                                            <span class="fa fa-star"></span>
+                                                         {% endif %}
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                            <div class="text-white mt-n1 font-weight-600 text-f-4-5 item ">
+                                                Total Bar: {{(data["bar"]["closest_facility"])|count}} 
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+
+                                {% if data["daycare"]["closest_facility"]|length>0  %}
+                                    <div class="box1 d-flex">
+                                        <img src="{{templates_path}}/full-report-icons/day_care.svg" style="
+                                            filter:
+                                            'invert(1%) sepia(90%) saturate(1852%) hue-rotate(350deg) brightness(101%) contrast(98%)';
+                                            height:33px ;width:33px" />
+                                        <div class="w-100   ml-1">
+                                            <div class="d-flex flex-wrap  justify-content-between w-100 align-items-center">
+                                                <div class="text-f-4 text-white font-weight-400 text-wrap item">
+                                                    Day Care
+                                                </div>
+                                                <div class="d-flex flex-wrap mt-n1 item1" style="padding-left:5.8rem">
+                                                    {% for starcount in range(0,5)%}
+                                                         {% if starcount < data["daycare"]["facility_rating"]|int %}
+                                                            <span class="fa fa-star checked"></span>
+                                                         {% else %}
+                                                            <span class="fa fa-star"></span>
+                                                         {% endif %}
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                            <div class="text-white mt-n1 font-weight-600 text-f-4-5 item ">
+                                                Total Day Care: {{(data["daycare"]["closest_facility"])|count}} 
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+
+                                {% if data["healthcare"]["closest_facility"]|length>0  %}
+                                    <div class="box1 d-flex">
+                                        <img src="{{templates_path}}/full-report-icons/health_care.svg" style="
+                                            filter:
+                                            'invert(1%) sepia(90%) saturate(1852%) hue-rotate(350deg) brightness(101%) contrast(98%)';
+                                            height:33px ;width:33px" />
+                                        <div class="w-100   ml-1">
+                                            <div class="d-flex flex-wrap  justify-content-between w-100 align-items-center">
+                                                <div class="text-f-4 text-white font-weight-400 text-wrap item">
+                                                    Healthcare
+                                                </div>
+                                                <div class="d-flex flex-wrap mt-n1 item1" style="padding-left:5.8rem">
+                                                    {% for starcount in range(0,5)%}
+                                                        {% if starcount < data["healthcare"]["facility_rating"]|int %}
+                                                            <span class="fa fa-star checked"></span>
+                                                        {% else %}
+                                                            <span class="fa fa-star"></span>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                            <div class="text-white mt-n1 font-weight-600 text-f-4-5 item ">
+                                                Total Healthcare: {{(data["healthcare"]["closest_facility"])|count}} 
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+
+                                {% if data["ele_school"]["closest_facility"]|length>0  %}
+                                    <div class="box1 d-flex">
+                                        <img src="{{templates_path}}/full-report-icons/elementary_school.svg" style="
+                                            filter:
+                                            'invert(1%) sepia(90%) saturate(1852%) hue-rotate(350deg) brightness(101%) contrast(98%)';
+                                            height:33px ;width:33px" />
+                                        <div class="w-100   ml-1">
+                                            <div class="d-flex flex-wrap  justify-content-between w-100 align-items-center">
+                                                <div class="text-f-4 text-white font-weight-400 text-wrap item">
+                                                    Elementary School
+                                                </div>
+                                                <div class="d-flex flex-wrap mt-n1 item1" style="padding-left:5.8rem">
+                                                    {% for starcount in range(0,5)%}
+                                                        {% if starcount < data["ele_school"]["facility_rating"]|int %}
+                                                            <span class="fa fa-star checked"></span>
+                                                        {% else %}
+                                                            <span class="fa fa-star"></span>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                            <div class="text-white mt-n1 font-weight-600 text-f-4-5 item ">
+                                                Total Elementary School: {{(data["ele_school"]["closest_facility"])|count}} 
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+
+                                {% if data["sec_school"]["closest_facility"]|length>0  %}
                                     <div class="box1 d-flex">
                                         <img src="{{templates_path}}/full-report-icons/school.svg" style="
                                             filter:
@@ -87,7 +199,7 @@
                                         <div class="w-100   ml-1">
                                             <div class="d-flex flex-wrap  justify-content-between w-100 align-items-center">
                                                 <div class="text-f-4 text-white font-weight-400 text-wrap item">
-                                                    Secondary School  
+                                                    Secondary School
                                                 </div>
                                                 <div class="d-flex flex-wrap mt-n1 item1" style="padding-left:5.8rem">
                                                     {% for starcount in range(0,5)%}
@@ -100,41 +212,69 @@
                                                 </div>
                                             </div>
                                             <div class="text-white mt-n1 font-weight-600 text-f-4-5 item ">
-                                                Total Secondary School: {{(data["sec_school"]["closest_facility"])|count}}
+                                                Total Secondary School: {{(data["sec_school"]["closest_facility"])|count}} 
                                             </div>
                                         </div>
                                     </div>
                                 {% endif %}
-                                {% if data["daycare"]["closest_facility"]|length>0 %}
+
+                                {% if data["grocery"]["closest_facility"]|length>0  %}
                                     <div class="box1 d-flex">
-                                        <img src="{{templates_path}}/full-report-icons/day_care.svg" style="
+                                        <img src="{{templates_path}}/full-report-icons/grocery.svg" style="
                                             filter:
                                             'invert(1%) sepia(90%) saturate(1852%) hue-rotate(350deg) brightness(101%) contrast(98%)';
                                             height:33px ;width:33px" />
                                         <div class="w-100   ml-1">
                                             <div class="d-flex flex-wrap  justify-content-between w-100 align-items-center">
                                                 <div class="text-f-4 text-white font-weight-400 text-wrap item">
-                                                    Day Care
+                                                    Groceries
                                                 </div>
-                                                
                                                 <div class="d-flex flex-wrap mt-n1 item1" style="padding-left:5.8rem">
-                                                    {% for starcount in range(0,5) %}
-                                                        {% if starcount < data["daycare"]["facility_rating"]|int%}
+                                                    {% for starcount in range(0,5)%}
+                                                         {% if starcount < data["grocery"]["facility_rating"]|int %}
                                                             <span class="fa fa-star checked"></span>
-                                                        {% else %}
+                                                         {% else %}
                                                             <span class="fa fa-star"></span>
-                                                        {% endif %}
+                                                         {% endif %}
                                                     {% endfor %}
                                                 </div>
-                                                
                                             </div>
                                             <div class="text-white mt-n1 font-weight-600 text-f-4-5 item ">
-                                                Total Day Care: {{(data["daycare"]["closest_facility"])|count}}
+                                                Total Groceries: {{(data["grocery"]["closest_facility"])|count}} 
                                             </div>
                                         </div>
                                     </div>
                                 {% endif %}
-                                {% if data["restaurant"]["closest_facility"]|length>0 %}
+
+                                {% if data["cafe"]["closest_facility"]|length>0  %}
+                                    <div class="box1 d-flex">
+                                        <img src="{{templates_path}}/full-report-icons/restaurant.svg" style="
+                                            filter:
+                                            'invert(1%) sepia(90%) saturate(1852%) hue-rotate(350deg) brightness(101%) contrast(98%)';
+                                            height:33px ;width:33px" />
+                                        <div class="w-100   ml-1">
+                                            <div class="d-flex flex-wrap  justify-content-between w-100 align-items-center">
+                                                <div class="text-f-4 text-white font-weight-400 text-wrap item">
+                                                    Cafe
+                                                </div>
+                                                <div class="d-flex flex-wrap mt-n1 item1" style="padding-left:5.8rem">
+                                                    {% for starcount in range(0,5)%}
+                                                         {% if starcount < data["cafe"]["facility_rating"]|int %}
+                                                            <span class="fa fa-star checked"></span>
+                                                         {% else %}
+                                                            <span class="fa fa-star"></span>
+                                                         {% endif %}
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                            <div class="text-white mt-n1 font-weight-600 text-f-4-5 item ">
+                                                Total Cafe: {{(data["cafe"]["closest_facility"])|count}} 
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                
+                                {% if data["restaurant"]["closest_facility"]|length>0  %}
                                     <div class="box1 d-flex">
                                         <img src="{{templates_path}}/full-report-icons/restaurant.svg" style="
                                             filter:
@@ -145,29 +285,24 @@
                                                 <div class="text-f-4 text-white font-weight-400 text-wrap item">
                                                     Restaurant
                                                 </div>
-                                                
                                                 <div class="d-flex flex-wrap mt-n1 item1" style="padding-left:5.8rem">
-                                                   
-                                                    {% for starcount in range(0,5) %}
-                                                        {% if starcount < data["restaurant"]["facility_rating"]|int%}
+                                                    {% for starcount in range(0,5)%}
+                                                         {% if starcount < data["restaurant"]["facility_rating"]|int %}
                                                             <span class="fa fa-star checked"></span>
-                                                        {% else %}
+                                                         {% else %}
                                                             <span class="fa fa-star"></span>
-                                                        {% endif %}
+                                                         {% endif %}
                                                     {% endfor %}
                                                 </div>
-                                                
                                             </div>
                                             <div class="text-white mt-n1 font-weight-600 text-f-4-5 item ">
-                                                Total Restaurant: {{(data["restaurant"]["closest_facility"])|count}}
+                                                Total Restaurant: {{(data["restaurant"]["closest_facility"])|count}} 
                                             </div>
                                         </div>
                                     </div>
                                 {% endif %}
-                                    
+
                             </div>
-
-
                         </div>
 
 
@@ -195,11 +330,8 @@
                         <div class=" text-white mt-1 font-weight-600 text-f-4-5  ">
                             <div class="text-white mt-1 font-weight-600 text-f-4-5 walk">
                                 Walk Score : 32 | Car-Dependent <br>
-                                Bike Score : 52 | Bikeable<br>
-                                Transit Score : 39 | Some Transit
-
-
-
+                                <!-- Bike Score : 52 | Bikeable<br> -->
+                                <!-- Transit Score : 39 | Some Transit -->
                             </div>
                         </div>
 
@@ -306,7 +438,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div style="width:36% ;margin-top:10px;">
+                        <div class="year" style="width:36% ;margin-top:10px;">
                             <div class=" align-self-center  chart-background rounded" style="height: 45vh;">
                                 <div style="font-size:1.2em; font-weight:600;padding-left: .8em; padding-top: .6em;">
                                     Year of construction
@@ -409,7 +541,7 @@
                 <div style="margin-left:30px; margin-right:30px; margin-top:40px">
                     <div class="d-flex  dsectionHeader justify-content-between align-items-end  ">
                         <div class="d-flex align-items-end  u-color-color-charcoal ">
-                            <img src="{{templates_path}}/full-report-icons/peoples.svg" width="35px" class="mr-1" />
+                            <img class ="deimg "src="{{templates_path}}/full-report-icons/peoples.svg" width="35px" class="mr-1" />
                             <div class=" mainText ml-1  font-weight-400" style="padding-left:.5em">
                                 Demographics
                             </div>
@@ -426,8 +558,8 @@
                                   
                                     <div class="ml-3" style="padding-left:1.8em">
                                         <div class="dheading">Total Households</div>
-                                        <div class="d-flex align-items-center" style="margin-top: -.2rem;">
-                                            <img src="{{templates_path}}/full-report-icons/home.svg" height="40px" />
+                                        <div class="d-flex align-items-center dem" style="margin-top: -.2rem;">
+                                            <img class="dhimg"  src="{{templates_path}}/full-report-icons/home.svg" height="40px" />
                                             <div class="maintext ml-2">
                                                 998
                                             </div>
@@ -435,8 +567,8 @@
                                     </div>
                                     <div class="ml-3" style="padding-left:1.9em">
                                         <div class="dheading">Population</div>
-                                        <div class="d-flex align-items-center" style="margin-top: -.2rem;">
-                                            <img src="{{templates_path}}/full-report-icons/peoples.svg" height="20px" />
+                                        <div class="d-flex align-items-center dem" style="margin-top: -.2rem;">
+                                            <img class="dhpe" src="{{templates_path}}/full-report-icons/peoples.svg" height="20px" />
                                             <div class="maintext ml-2 ">
                                                 2,345
                                             </div>
@@ -444,22 +576,22 @@
                                     </div>
                                     <div class="ml-3" style="padding-left:1.9em">
                                         <div class="dheading">Owned</div>
-                                        <div class="d-flex align-items-center" style="margin-top: -.2rem;">
-                                            <img src="{{templates_path}}/full-report-icons/owned.svg" height="35px" />
+                                        <div class="d-flex align-items-center dem" style="margin-top: -.2rem;">
+                                            <img class="doimg" src="{{templates_path}}/full-report-icons/owned.svg" height="35px" />
                                             <div class="maintext  ml-2"> 88.9%</div>
                                         </div>
                                     </div>
                                     <div class="ml-3" style="padding-left:1.9em">
                                         <div class="dheading">Rented</div>
-                                        <div class="d-flex align-items-center" style="margin-top: -.2rem;">
-                                            <img src="{{templates_path}}/full-report-icons/rent.svg" height="35px" />
+                                        <div class="d-flex align-items-center dem" style="margin-top: -.2rem;">
+                                            <img class= "doimg" src="{{templates_path}}/full-report-icons/rent.svg" height="35px" />
                                             <div class="maintext  ml-2"> 45.9%</div>
                                         </div>
                                     </div>
                                     <div class="col-4" style="padding-left:1.9em">
                                         <div class="dheading">Households with kids</div>
-                                        <div style="padding-top: 0.4em"></div>
-                                        <div class="d-flex align-items-center rounded m-0 p-0 "
+                                        <div style="padding-top: 0.4em "></div>
+                                        <div class="d-flex align-items-center rounded m-0 p-0 dem"
                                             style="margin-top: -.2rem;">
                                             <div class="py-3 bg-color-persian-green pl-1 text-white" style=" border-top-left-radius: .4em; border-bottom-left-radius: .4em;
                                       width:49.6%;"></div>
@@ -508,7 +640,7 @@
                                 <div class="sdheading">Avg Household Income</div>
                                 <div class="d-flex align-items-center" style="padding-top:.4em">
 
-                                    <img src="{{templates_path}}/full-report-icons/dollarsign.svg"
+                                    <img class="dollar" src="{{templates_path}}/full-report-icons/dollarsign.svg"
                                         style="filter:contrast(0%) brightness(20%)">
                                     <div class="sdcontent ml-2" style="padding-left:1.2em">
                                         108,164
@@ -541,7 +673,7 @@
                                             <div class="">
                                                 <div class="d-flex align-items-center ">
 
-                                                    <img src="full-report-icons/car1.svg" height="35px" width="35px">
+                                                    <img src="{{templates_path}}/full-report-icons/car1.svg" height="35px" width="35px">
 
                                                     <div class="sdcontent ml-2" style="padding-left:1.2em">
                                                         75.6%
@@ -571,10 +703,10 @@
                                 </div>
                             </div>
                             <div class="col-4 lan">
-                                <div class="sdheading" style="padding-left: 2.4em;">Languages spoken</div>
-                                <div class=" d-flex align-items-center flex-wrap">
-                                    <div style="padding-left:2em"></div>
-                                    <div class=" mt-2 mr-2">
+                                <div class="sdheading" style="padding-left: 2.9em;">Languages spoken</div>
+                                <div class="  d-flex align-items-center flex-wrap">
+                                    <div class=" lani" style="padding-left:2em"></div>
+                                    <div class=" mt-2 mr-2 ">
                                         <div class="sdcontent " style="padding-left:1em"> English</div>
                                         <div class="sdsmall-text" style="font-size:.85em; padding-left:1em;"> 38%</div>
                                     </div>
@@ -592,7 +724,7 @@
                                     </div>
                                 </div>
 
-                                <div class="sdsubtext" style="padding-left:3rem">
+                                <div class="sdsubtext lanp" style="padding-left:3rem">
                                     6.4% speak other languages
                                 </div>
                             </div>
@@ -615,7 +747,7 @@
                     </div>
                     <div class="hsectionHeader" style="margin-left:1.7rem"></div>
 
-                    <section class=" p-0 row justify-content-between" style="margin-left:1.7rem">
+                    <section class="helt p-0 row justify-content-between" style="margin-left:1.7rem">
 
                         <div class="pr-2 cli " style="width:23%">
                             <div class="d-flex ">
@@ -629,6 +761,9 @@
 
                             <div>
                                 <div>
+                                    {% if  %}
+                                        
+                                    {% endif %}
                                     <div class="pdfContainer rounded-top rounded-bottom">
                                         <div class="d-flex justify-content-between align-items-center"
                                             style="margin-left:.3em">
@@ -637,14 +772,14 @@
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <div class="d-flex  align-items-center">
-                                                    <img src="{{templates_path}}/full-report-icons/location-g.svg" width="30px"
+                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/location-g.svg" width="30px"
                                                         height="30px" />
                                                     <div class="distance-text  text-nowrap">
                                                         2.1km
                                                     </div>
                                                 </div>
                                                 <div class="d-flex align-items-center  text-nowrap">
-                                                    <img src='{{templates_path}}/full-report-icons/car-g.svg' width="30px"
+                                                    <img class="htcr" src='{{templates_path}}/full-report-icons/car-g.svg' width="30px"
                                                         height="30px" />
                                                     <div class="distance-text">
                                                         5mins
@@ -656,8 +791,6 @@
                                         <div class="address-text text-break  text-truncate-2" style="margin-left:.3em">
                                             170 Vanguard Dr
                                         </div>
-
-
                                     </div>
                                     <div class="pdfContainer rounded-top rounded-bottom">
                                         <div class="d-flex justify-content-between align-items-center"
@@ -667,14 +800,14 @@
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <div class="d-flex  align-items-center">
-                                                    <img src="{{templates_path}}/full-report-icons/location-g.svg" width="30px"
+                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/location-g.svg" width="30px"
                                                         height="30px" />
                                                     <div class="distance-text  text-nowrap">
                                                         2.1km
                                                     </div>
                                                 </div>
                                                 <div class="d-flex align-items-center  text-nowrap">
-                                                    <img src='{{templates_path}}/full-report-icons/car-g.svg' width="30px"
+                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/car-g.svg" width="30px"
                                                         height="30px" />
                                                     <div class="distance-text">
                                                         5mins
@@ -698,7 +831,7 @@
                         </div>
                         <div class="pr-2 phar  " style="width:23% ; margin-left:-5em">
                             <div class="d-flex ">
-                                <div class="text-f-5 color-charcol" style="font-weight:500">
+                                <div class="newpad text-f-5 color-charcol" style="font-weight:500">
                                     Pharmacies and Laboratory
                                 </div>
                                 <div class="text-f-4" style="padding-left:2em">
@@ -715,14 +848,14 @@
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <div class="d-flex  align-items-center">
-                                                    <img src="{{templates_path}}/full-report-icons/location-g.svg" width="30px"
+                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/location-g.svg" width="30px"
                                                         height="30px" />
                                                     <div class="distance-text  text-nowrap">
                                                         2.1km
                                                     </div>
                                                 </div>
                                                 <div class="d-flex align-items-center  text-nowrap">
-                                                    <img src='{{templates_path}}/full-report-icons/car-g.svg' width="30px"
+                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/car-g.svg" width="30px"
                                                         height="30px" />
                                                     <div class="distance-text">
                                                         5mins
@@ -745,14 +878,14 @@
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <div class="d-flex  align-items-center">
-                                                    <img src="{{templates_path}}/full-report-icons/location-g.svg" width="30px"
+                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/location-g.svg" width="30px"
                                                         height="30px" />
                                                     <div class="distance-text  text-nowrap">
                                                         2.1km
                                                     </div>
                                                 </div>
                                                 <div class="d-flex align-items-center  text-nowrap">
-                                                    <img src='{{templates_path}}/full-report-icons/car-g.svg' width="30px"
+                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/car-g.svg" width="30px"
                                                         height="30px" />
                                                     <div class="distance-text">
                                                         5mins
@@ -793,14 +926,14 @@
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <div class="d-flex  align-items-center">
-                                                    <img src="{{templates_path}}/full-report-icons/location-g.svg" width="30px"
+                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/location-g.svg" width="30px"
                                                         height="30px" />
                                                     <div class="distance-text  text-nowrap">
                                                         2.1km
                                                     </div>
                                                 </div>
                                                 <div class="d-flex align-items-center  text-nowrap">
-                                                    <img src='{{templates_path}}/full-report-icons/car-g.svg' width="30px"
+                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/car-g.svg" width="30px"
                                                         height="30px" />
                                                     <div class="distance-text">
                                                         5mins
@@ -823,14 +956,14 @@
                                             </div>
                                             <div class="d-flex align-items-center">
                                                 <div class="d-flex  align-items-center">
-                                                    <img src="{{templates_path}}/full-report-icons/location-g.svg" width="30px"
+                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/location-g.svg" width="30px"
                                                         height="30px" />
                                                     <div class="distance-text  text-nowrap">
                                                         2.1km
                                                     </div>
                                                 </div>
                                                 <div class="d-flex align-items-center  text-nowrap">
-                                                    <img src='{{templates_path}}/full-report-icons/car-g.svg' width="30px"
+                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/car-g.svg" width="30px"
                                                         height="30px" />
                                                     <div class="distance-text">
                                                         5mins
@@ -924,7 +1057,7 @@
 
 
                                                 <div style="margin-left:.8em">
-                                                    <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px"
+                                                    <img src="{{templates_path}}/full-report-icons/location-g.svg" width="32px"
                                                         height="32px" />
 
                                                     <div class="text-f-4  font-weight-400">
@@ -932,7 +1065,7 @@
                                                     </div>
                                                 </div>
                                                 <div style="margin-left:-.8em">
-                                                    <img src='{{templates_path}}/full-report-icons/walk-g.svg' width="32px"
+                                                    <img src="{{templates_path}}/full-report-icons/walk-g.svg" width="32px"
                                                         height="32px" />
 
                                                     <div class="text-f-4 " style=" font-weight:400">
@@ -940,7 +1073,7 @@
                                                     </div>
                                                 </div>
                                                 <div style="margin-left:-.8em">
-                                                    <img src='{{templates_path}}/full-report-icons/car-g.svg' width="32px"
+                                                    <img src="{{templates_path}}/full-report-icons/car-g.svg" width="32px"
                                                         height="32px" />
 
                                                     <div class="text-f-4  font-weight-400">
@@ -948,7 +1081,7 @@
                                                     </div>
                                                 </div>
                                                 <div style="margin-right:1em">
-                                                    <img src='{{templates_path}}/full-report-icons/bike-g.svg' width="32px"
+                                                    <img src="{{templates_path}}/full-report-icons/bike-g.svg" width="32px"
                                                         height="32px" />
 
                                                     <div class="text-f-4  font-weight-400">
@@ -1005,7 +1138,7 @@
 
 
                                                 <div style="margin-left:.8em">
-                                                    <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px"
+                                                    <img src="{{templates_path}}/full-report-icons/location-g.svg" width="32px"
                                                         height="32px" />
 
                                                     <div class="text-f-4  font-weight-400">
@@ -1013,7 +1146,7 @@
                                                     </div>
                                                 </div>
                                                 <div style="margin-left:-.5em">
-                                                    <img src='{{templates_path}}/full-report-icons/walk-g.svg' width="32px"
+                                                    <img src="{{templates_path}}/full-report-icons/walk-g.svg" width="32px"
                                                         height="32px" />
 
                                                     <div class="text-f-4 " style=" font-weight:400">
@@ -1021,7 +1154,7 @@
                                                     </div>
                                                 </div>
                                                 <div style="margin-left:-.8em">
-                                                    <img src='{{templates_path}}/full-report-icons/car-g.svg' width="32px"
+                                                    <img src="{{templates_path}}/full-report-icons/car-g.svg" width="32px"
                                                         height="32px" />
 
                                                     <div class="text-f-4  font-weight-400">
@@ -1029,7 +1162,7 @@
                                                     </div>
                                                 </div>
                                                 <div style="margin-right:1em">
-                                                    <img src='{{templates_path}}/full-report-icons/bike-g.svg' width="32px"
+                                                    <img src="{{templates_path}}/full-report-icons/bike-g.svg" width="32px"
                                                         height="32px" />
 
                                                     <div class="text-f-4  font-weight-400">
@@ -1086,7 +1219,7 @@
 
 
                                                 <div style="margin-left:.8em">
-                                                    <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px"
+                                                    <img src="{{templates_path}}/full-report-icons/location-g.svg" width="32px"
                                                         height="32px" />
 
                                                     <div class="text-f-4  font-weight-400">
@@ -1094,7 +1227,7 @@
                                                     </div>
                                                 </div>
                                                 <div style="margin-left:-.5em">
-                                                    <img src='{{templates_path}}/full-report-icons/walk-g.svg' width="32px"
+                                                    <img src="{{templates_path}}/full-report-icons/walk-g.svg" width="32px"
                                                         height="32px" />
 
                                                     <div class="text-f-4 " style=" font-weight:400">
@@ -1102,7 +1235,7 @@
                                                     </div>
                                                 </div>
                                                 <div style="margin-left:-.8em">
-                                                    <img src='{{templates_path}}/full-report-icons/car-g.svg' width="32px"
+                                                    <img src="{{templates_path}}/full-report-icons/car-g.svg" width="32px"
                                                         height="32px" />
 
                                                     <div class="text-f-4  font-weight-400">
@@ -1110,7 +1243,7 @@
                                                     </div>
                                                 </div>
                                                 <div style="margin-right:1em">
-                                                    <img src='{{templates_path}}/full-report-icons/bike-g.svg' width="32px"
+                                                    <img src="{{templates_path}}/full-report-icons/bike-g.svg" width="32px"
                                                         height="32px" />
 
                                                     <div class="text-f-4  font-weight-400">
@@ -1167,7 +1300,7 @@
 
 
                                                 <div style="margin-left:.8em">
-                                                    <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px"
+                                                    <img src="{{templates_path}}/full-report-icons/location-g.svg" width="32px"
                                                         height="32px" />
 
                                                     <div class="text-f-4  font-weight-400">
@@ -1175,7 +1308,7 @@
                                                     </div>
                                                 </div>
                                                 <div style="margin-left:-.5em">
-                                                    <img src='{{templates_path}}/full-report-icons/walk-g.svg' width="32px"
+                                                    <img src="{{templates_path}}/full-report-icons/walk-g.svg" width="32px"
                                                         height="32px" />
 
                                                     <div class="text-f-4 " style=" font-weight:400">
@@ -1183,7 +1316,7 @@
                                                     </div>
                                                 </div>
                                                 <div style="margin-left:-.8em">
-                                                    <img src='{{templates_path}}/full-report-icons/car-g.svg' width="32px"
+                                                    <img src="{{templates_path}}/full-report-icons/car-g.svg" width="32px"
                                                         height="32px" />
 
                                                     <div class="text-f-4  font-weight-400">
@@ -1191,7 +1324,7 @@
                                                     </div>
                                                 </div>
                                                 <div style="margin-right:1em">
-                                                    <img src='{{templates_path}}/full-report-icons/bike-g.svg' width="32px"
+                                                    <img src="{{templates_path}}/full-report-icons/bike-g.svg" width="32px"
                                                         height="32px" />
 
                                                     <div class="text-f-4  font-weight-400">
@@ -1484,6 +1617,7 @@
                     </section>
 
                 </section>
+                <!--Daycare-->
                 <section class="  pr-md-3" style="margin-left:2.3em ; margin-right: 2em; margin-top:1.5em ;">
                     <div class="d-flex  sectionHeader justify-content-between align-items-center  ">
                         <div class="d-flex align-items-center   u-color-color-charcoal ">
@@ -1748,8 +1882,8 @@
                 </section>
 
                 <!--Groceries-->
-                <section class="d-flex  align-items-start mt-2" style="margin-left:2rem">
-                    <section class="  pr-md-3    " style="width: 48%">
+                <section class="d-flex  align-items-start mt-2 " style="margin-left:2rem">
+                    <section class="  pr-md-3  rese  " style="width: 48%">
                         <div class="d-flex  sectionHeader justify-content-between align-items-center  ">
                             <div class="d-flex align-items-center   u-color-color-charcoal ">
                                 <img src="{{templates_path}}/full-report-icons/grocery-b.svg" width="45px" height="45px" />
@@ -1757,7 +1891,7 @@
                             </div>
 
                             <div class="subtext">
-                                4more
+                                4 more
                             </div>
 
                         </div>
@@ -1768,7 +1902,7 @@
                             <div class="col-6 m-0  p-0">
                                 <div class="d-flex">
                                     <div>
-                                        <div class='pdfHeight p-2 border-right-gc'>
+                                        <div class='pdfHeight p-2 border-right-gc resed'>
 
                                             <div class="d-flex  justify-content-between align-items-center ">
 
@@ -1778,7 +1912,7 @@
 
                                                 <div></div>
 
-                                                <div class="d-flex flex-column align-items-center">
+                                                <div class="d-flex flex-column align-items-center res">
                                                     <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px"
                                                         height="32px" />
                                                     <div class="text-f-4 text-nowrap">
@@ -1791,7 +1925,7 @@
                                             </div>
 
                                         </div>
-                                        <div class='pdfHeight p-2 border-top-gc'>
+                                        <div class='pdfHeight p-2 border-top-gc resed'>
 
                                             <div class="d-flex  justify-content-between align-items-center ">
 
@@ -1818,13 +1952,13 @@
                                     </div>
 
                                     <div>
-                                        <div class='pdfHeight p-2 border-bottom-gc'>
+                                        <div class='pdfHeight p-2 border-bottom-gc resed'>
 
                                             <div class="d-flex  justify-content-between align-items-center ">
 
-                                                <Badge class="rounded color-75 p-1 gtext-f-4 font-weight-400">
+                                                <div class="rounded color-75 p-1 gtext-f-4 font-weight-400">
                                                     Farm Boy
-                                                </Badge>
+                                                </div>
 
                                                 <div></div>
 
@@ -1841,7 +1975,7 @@
                                             </div>
 
                                         </div>
-                                        <div class='pdfHeight p-2 border-left-gc'>
+                                        <div class='pdfHeight p-2 border-left-gc resed'>
 
                                             <div class="d-flex  justify-content-between align-items-center ">
 
@@ -1875,7 +2009,7 @@
 
 
                     </section>
-                    <section class="pr-md-3 " style="width: 48% ;margin-left:2rem">
+                    <section class="pr-md-3 rese " style="width: 48% ;margin-left:2rem">
                         <div class="d-flex  sectionHeader justify-content-between align-items-center  ">
                             <div class="d-flex align-items-center   color-charcoal ">
                                 <img src="{{templates_path}}/full-report-icons/bar-b.svg" width="40px" height="40px" />
@@ -1886,15 +2020,15 @@
 
                             <div class="subtext">
 
-                                47more
+                                47 more
                             </div>
 
                         </div>
 
                         <div class="d-flex mt-3 flex-wrap">
 
-                            <div class="col-6 m-0 mt-0  p-0">
-                                <div class="d-flex">
+                            <div >
+                                <div class="d-flex resed">
                                     <div>
                                         <div class='pdfHeight p-2 border-right-gc'>
 
@@ -1904,9 +2038,9 @@
                                                     Farm Boy
                                                 </Badge>
 
-                                                <div></div>
+                                                
 
-                                                <div class="d-flex flex-column align-items-center">
+                                                <div class="d-flex flex-column align-items-center res">
                                                     <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px"
                                                         height="32px" />
                                                     <div class="text-f-4 text-nowrap">
@@ -1970,7 +2104,7 @@
                                             </div>
 
                                         </div>
-                                        <div class='pdfHeight p-2 border-left-gc'>
+                                        <div class='pdfHeight p-2 border-left-gc resed'>
 
                                             <div class="d-flex  justify-content-between align-items-center ">
 
@@ -1980,7 +2114,7 @@
 
                                                 <div></div>
 
-                                                <div class="d-flex flex-column align-items-center">
+                                                <div class="d-flex flex-column align-items-center ">
                                                     <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px"
                                                         height="32px" />
                                                     <div class="text-f-4 text-nowrap">
