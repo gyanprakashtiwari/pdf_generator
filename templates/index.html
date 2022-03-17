@@ -91,7 +91,7 @@
                                                 </div>
                                                 <div class="d-flex flex-wrap mt-n1 item1" style="padding-left:5.8rem">
                                                     {% for starcount in range(0,5)%}
-                                                         {% if starcount < (data["bar"]["facility_rating"]|int) %}
+                                                         {% if starcount < data["bar"]["facility_rating"]|int %}
                                                             <span class="fa fa-star checked"></span>
                                                          {% else %}
                                                             <span class="fa fa-star"></span>
@@ -134,7 +134,7 @@
                                     </div>
                                 {% endif %}
 
-                                {% if data["healthcare"]["closest_facility"]|length>0  %}
+                                {% if data["healthcare"]["major_closest_facility"]|length>0  %}
                                     <div class="box1 d-flex">
                                         <img src="{{templates_path}}/full-report-icons/health_care.svg" style="
                                             filter:
@@ -156,7 +156,7 @@
                                                 </div>
                                             </div>
                                             <div class="text-white mt-n1 font-weight-600 text-f-4-5 item ">
-                                                Total Healthcare: {{(data["healthcare"]["closest_facility"])|count}} 
+                                                Total Healthcare: {{(data["healthcare"]["major_closest_facility"])|count}} 
                                             </div>
                                         </div>
                                     </div>
@@ -218,7 +218,7 @@
                                     </div>
                                 {% endif %}
 
-                                {% if data["grocery"]["closest_facility"]|length>0  %}
+                                {% if data["grocery"]["major_closest_facility"]|length>0  %}
                                     <div class="box1 d-flex">
                                         <img src="{{templates_path}}/full-report-icons/grocery.svg" style="
                                             filter:
@@ -240,7 +240,7 @@
                                                 </div>
                                             </div>
                                             <div class="text-white mt-n1 font-weight-600 text-f-4-5 item ">
-                                                Total Groceries: {{(data["grocery"]["closest_facility"])|count}} 
+                                                Total Groceries: {{(data["grocery"]["major_closest_facility"])|count}} 
                                             </div>
                                         </div>
                                     </div>
@@ -308,34 +308,32 @@
 
 
                     </div>
-                    <div class="mt-2 ml-2 navi" style="width:47%">
-                        <div class="d-flex justify-content-between align-items-start ">
-                            <img src="{{templates_path}}/full-report-icons/navigation.svg"
-                                style="
-                              filter:
-                                 invert(1%) sepia(90%) saturate(1852%) hue-rotate(350deg) brightness(101%) contrast(98%);" height="30px" width="30px" />
-                            <div class=" w-100  ml-1">
-                                <div class="d-flex flex-wrap  justify-content-between w-100 align-items-center">
-                                    <div class="text-f-4 text-white font-weight-400 text-wrap mb-1 item">
-                                        Walk, Transit and Bike score
+                    {% if data["walkscore"]|length==3 %}
+                        <div class="mt-2 ml-2 navi" style="width:47%">
+                            <div class="d-flex justify-content-between align-items-start ">
+                                <img src="{{templates_path}}/full-report-icons/navigation.svg"
+                                    style="
+                                filter:
+                                    invert(1%) sepia(90%) saturate(1852%) hue-rotate(350deg) brightness(101%) contrast(98%);" height="30px" width="30px" />
+                                <div class=" w-100  ml-1">
+                                    <div class="d-flex flex-wrap  justify-content-between w-100 align-items-center">
+                                        <div class="text-f-4 text-white font-weight-400 text-wrap mb-1 item">
+                                            Walk, Transit and Bike score
+                                        </div>
+                                        <div class="d-flex flex-wrap mt-n1">
+                                        </div>
                                     </div>
-                                    <div class="d-flex flex-wrap mt-n1">
-
-                                    </div>
-
                                 </div>
-
+                            </div>
+                            <div class=" text-white mt-1 font-weight-600 text-f-4-5  ">
+                                <div class="text-white mt-1 font-weight-600 text-f-4-5 walk">
+                                    Walk Score : {{data["walkscore"][0]["score_value"]}} | Car-Dependent <br>
+                                    Bike Score : {{data["walkscore"][1]["score_value"]}} | Bikeable<br>
+                                    Transit Score : {{data["walkscore"][2]["score_value"]}}  | Some Transit
+                                </div>
                             </div>
                         </div>
-                        <div class=" text-white mt-1 font-weight-600 text-f-4-5  ">
-                            <div class="text-white mt-1 font-weight-600 text-f-4-5 walk">
-                                Walk Score : 32 | Car-Dependent <br>
-                                <!-- Bike Score : 52 | Bikeable<br> -->
-                                <!-- Transit Score : 39 | Some Transit -->
-                            </div>
-                        </div>
-
-                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -749,237 +747,151 @@
 
                     <section class="helt p-0 row justify-content-between" style="margin-left:1.7rem">
 
-                        <div class="pr-2 cli " style="width:23%">
-                            <div class="d-flex ">
-                                <div class="text-f-5 color-charcol" style="font-weight:500">
-                                    Clinics(Minor)
+                        {% if data["healthcare"]["minor_closest_facility"]|length>1 %}
+                            <div class="pr-2 cli " style="width:23%">
+                                <div class="d-flex ">
+                                    <div class="text-f-5 color-charcol" style="font-weight:500">
+                                        Clinics(Minor)
+                                    </div>
+                                    <div class="text-f-4" style="padding-left:9em">
+                                        {{(data["healthcare"]["minor_closest_facility"]|length)-2}} more
+                                    </div>
                                 </div>
-                                <div class="text-f-4" style="padding-left:9em">
-                                    10 more
-                                </div>
-                            </div>
 
-                            <div>
                                 <div>
-                                   
-                                    <div class="pdfContainer rounded-top rounded-bottom">
-                                        <div class="d-flex justify-content-between align-items-center"
-                                            style="margin-left:.3em">
-                                            <div class="heading-text  pr-3  text-truncate-2 text-wrap text-break">
-                                                Laurian Optometry
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <div class="d-flex  align-items-center">
-                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/location-g.svg" width="30px"
-                                                        height="30px" />
-                                                    <div class="distance-text  text-nowrap">
-                                                        2.1km
+                                    <div>
+                                        {% for i in range(0,2) %}
+                                        <div class="pdfContainer rounded-top rounded-bottom">
+                                            <div class="d-flex justify-content-between align-items-center"
+                                                style="margin-left:.3em">
+                                                <div class="heading-text  pr-3  text-truncate-2 text-wrap text-break">
+                                                    {{data["healthcare"]["minor_closest_facility"][i]["name"]}}
+                                                </div>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="d-flex  align-items-center">
+                                                        <img class="htcr" src="{{templates_path}}/full-report-icons/location-g.svg" width="30px"
+                                                            height="30px" />
+                                                        <div class="distance-text  text-nowrap">
+                                                            {{data["healthcare"]["minor_closest_facility"][i]["drive"]["distance"]}}km
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex align-items-center  text-nowrap">
+                                                        <img class="htcr" src='{{templates_path}}/full-report-icons/car-g.svg' width="30px"
+                                                            height="30px" />
+                                                        <div class="distance-text">
+                                                            {{data["healthcare"]["minor_closest_facility"][i]["drive"]["time"]}}mins
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="d-flex align-items-center  text-nowrap">
-                                                    <img class="htcr" src='{{templates_path}}/full-report-icons/car-g.svg' width="30px"
-                                                        height="30px" />
-                                                    <div class="distance-text">
-                                                        5mins
-                                                    </div>
-                                                </div>
-                                            </div>
 
-                                        </div>
-                                        <div class="address-text text-break  text-truncate-2" style="margin-left:.3em">
-                                            170 Vanguard Dr
-                                        </div>
-                                    </div>
-                                    <div class="pdfContainer rounded-top rounded-bottom">
-                                        <div class="d-flex justify-content-between align-items-center"
-                                            style="margin-left:.3em">
-                                            <div class="heading-text  pr-3  text-truncate-2 text-wrap text-break">
-                                                Laurian Optometry
                                             </div>
-                                            <div class="d-flex align-items-center">
-                                                <div class="d-flex  align-items-center">
-                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/location-g.svg" width="30px"
-                                                        height="30px" />
-                                                    <div class="distance-text  text-nowrap">
-                                                        2.1km
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex align-items-center  text-nowrap">
-                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/car-g.svg" width="30px"
-                                                        height="30px" />
-                                                    <div class="distance-text">
-                                                        5mins
-                                                    </div>
-                                                </div>
+                                            <div class="address-text text-break  text-truncate-2" style="margin-left:.3em">
+                                                {{data["healthcare"]["minor_closest_facility"][i]["address"]}}
                                             </div>
-
                                         </div>
-                                        <div class="address-text text-break  text-truncate-2" style="margin-left:.3em">
-                                            170 Vanguard Dr
-                                        </div>
+                                        {% endfor %}
                                     </div>
                                 </div>
                             </div>
+                       
+                        {% endif %}
 
-
-                        </div>
-                        <div class="pr-2 phar  " style="width:23% ; margin-left:-5em">
-                            <div class="d-flex ">
-                                <div class="newpad text-f-5 color-charcol" style="font-weight:500">
-                                    Pharmacies and Laboratory
+                        {% if data["healthcare"]["pharmacy_closest_facility"]|length>1 %}
+                            <div class="pr-2 phar  " style="width:23% ; margin-left:-5em">
+                                <div class="d-flex ">
+                                    <div class="newpad text-f-5 color-charcol" style="font-weight:500">
+                                        Pharmacies and Laboratory
+                                    </div>
+                                    <div class="text-f-4" style="padding-left:2em">
+                                        {{(data["healthcare"]["pharmacy_closest_facility"]|length)-2}} more
+                                    </div>
                                 </div>
-                                <div class="text-f-4" style="padding-left:2em">
-                                    7 more
-                                </div>
-                            </div>
-                            <div>
                                 <div>
-                                    <div class="pdfContainer rounded-top rounded-bottom">
-                                        <div class="d-flex justify-content-between align-items-center"
-                                            style="margin-left:.3em">
-                                            <div class="heading-text  pr-3  text-truncate-2 text-wrap text-break">
-                                                Laurian Optometry
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <div class="d-flex  align-items-center">
-                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/location-g.svg" width="30px"
-                                                        height="30px" />
-                                                    <div class="distance-text  text-nowrap">
-                                                        2.1km
-                                                    </div>
+                                    <div>
+                                        {% for i in range(0,2)  %}
+                                            
+                                        <div class="pdfContainer rounded-top rounded-bottom">
+                                            <div class="d-flex justify-content-between align-items-center"
+                                                style="margin-left:.3em">
+                                                <div class="heading-text  pr-3  text-truncate-2 text-wrap text-break">
+                                                    {{data["healthcare"]["pharmacy_closest_facility"][i]["name"]}}
                                                 </div>
-                                                <div class="d-flex align-items-center  text-nowrap">
-                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/car-g.svg" width="30px"
-                                                        height="30px" />
-                                                    <div class="distance-text">
-                                                        5mins
+                                                <div class="d-flex align-items-center">
+                                                    <div class="d-flex  align-items-center">
+                                                        <img class="htcr" src="{{templates_path}}/full-report-icons/location-g.svg" width="30px"
+                                                            height="30px" />
+                                                        <div class="distance-text  text-nowrap">
+                                                            {{data["healthcare"]["pharmacy_closest_facility"][i]["drive"]["distance"]}}km
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="address-text text-break  text-truncate-2" style="margin-left:.3em">
-                                            170 Vanguard Dr
-                                        </div>
-
-
-                                    </div>
-                                    <div class="pdfContainer rounded-top rounded-bottom">
-                                        <div class="d-flex justify-content-between align-items-center"
-                                            style="margin-left:.3em">
-                                            <div class="heading-text  pr-3  text-truncate-2 text-wrap text-break">
-                                                Laurian Optometry
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <div class="d-flex  align-items-center">
-                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/location-g.svg" width="30px"
-                                                        height="30px" />
-                                                    <div class="distance-text  text-nowrap">
-                                                        2.1km
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex align-items-center  text-nowrap">
-                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/car-g.svg" width="30px"
-                                                        height="30px" />
-                                                    <div class="distance-text">
-                                                        5mins
+                                                    <div class="d-flex align-items-center  text-nowrap">
+                                                        <img class="htcr" src="{{templates_path}}/full-report-icons/car-g.svg" width="30px"
+                                                            height="30px" />
+                                                        <div class="distance-text">
+                                                            {{data["healthcare"]["pharmacy_closest_facility"][i]["drive"]["time"]}}mins
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-
+                                            <div class="address-text text-break  text-truncate-2" style="margin-left:.3em">
+                                                {{data["healthcare"]["pharmacy_closest_facility"][i]["address"]}}
+                                            </div>
                                         </div>
-                                        <div class="address-text text-break  text-truncate-2" style="margin-left:.3em">
-                                            170 Vanguard Dr
-                                        </div>
+                                        {% endfor %}
                                     </div>
                                 </div>
                             </div>
+                        {% endif %}
 
-
-                        </div>
-                        <div class="pr-2 hlt" style="width:23%; margin-left:-7em">
-                            <div class="d-flex justify-content-between">
-                                <div class="text-f-5 color-charcol" style="font-weight:500">
-                                   Health and Wellness
+                        {% if data["healthcare"]["healthcare_closest_facility"]|length>1 %}
+                            <div class="pr-2 hlt" style="width:23%; margin-left:-7em">
+                                <div class="d-flex justify-content-between">
+                                    <div class="text-f-5 color-charcol" style="font-weight:500">
+                                    Health and Wellness
+                                    </div>
+                                    <div class="text-f-4 more" style="margin-left:-2em;">
+                                        {{(data["healthcare"]["healthcare_closest_facility"]|length)-2}} more
+                                    </div>
                                 </div>
-                                <div class="text-f-4 more" style="margin-left:-2em;">
-                                    7 more
-                                </div>
-                            </div>
-                            <div>
                                 <div>
-                                    <div class="pdfContainer rounded-top rounded-bottom">
-                                        <div class="d-flex justify-content-between align-items-center"
-                                            style="margin-left:.3em">
-                                            <div class="heading-text  pr-3  text-truncate-2 text-wrap text-break">
-                                                Laurian Optometry
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <div class="d-flex  align-items-center">
-                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/location-g.svg" width="30px"
-                                                        height="30px" />
-                                                    <div class="distance-text  text-nowrap">
-                                                        2.1km
+                                    <div>
+                                        {% for i in range(0,2) %}
+                                            <div class="pdfContainer rounded-top rounded-bottom">
+                                                <div class="d-flex justify-content-between align-items-center"
+                                                    style="margin-left:.3em">
+                                                    <div class="heading-text  pr-3  text-truncate-2 text-wrap text-break">
+                                                        {{data["healthcare"]["healthcare_closest_facility"][i]["name"]}}
                                                     </div>
-                                                </div>
-                                                <div class="d-flex align-items-center  text-nowrap">
-                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/car-g.svg" width="30px"
-                                                        height="30px" />
-                                                    <div class="distance-text">
-                                                        5mins
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="d-flex  align-items-center">
+                                                            <img class="htcr" src="{{templates_path}}/full-report-icons/location-g.svg" width="30px"
+                                                                height="30px" />
+                                                            <div class="distance-text  text-nowrap">
+                                                                {{data["healthcare"]["healthcare_closest_facility"][i]["drive"]["distance"]}}km
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex align-items-center  text-nowrap">
+                                                            <img class="htcr" src="{{templates_path}}/full-report-icons/car-g.svg" width="30px"
+                                                                height="30px" />
+                                                            <div class="distance-text">
+                                                                {{data["healthcare"]["healthcare_closest_facility"][i]["drive"]["time"]}}mins
+                                                            </div>
+                                                        </div>
                                                     </div>
+
+                                                </div>
+                                                <div class="address-text text-break  text-truncate-2" style="margin-left:.3em">
+                                                    {{data["healthcare"]["healthcare_closest_facility"][i]["address"]}}
                                                 </div>
                                             </div>
-
-                                        </div>
-                                        <div class="address-text text-break  text-truncate-2" style="margin-left:.3em">
-                                            170 Vanguard Dr
-                                        </div>
-
-
+                                        {% endfor %}
                                     </div>
-                                    <div class="pdfContainer rounded-top rounded-bottom">
-                                        <div class="d-flex justify-content-between align-items-center"
-                                            style="margin-left:.3em">
-                                            <div class="heading-text  pr-3  text-truncate-2 text-wrap text-break">
-                                                Laurian Optometry
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <div class="d-flex  align-items-center">
-                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/location-g.svg" width="30px"
-                                                        height="30px" />
-                                                    <div class="distance-text  text-nowrap">
-                                                        2.1km
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex align-items-center  text-nowrap">
-                                                    <img class="htcr" src="{{templates_path}}/full-report-icons/car-g.svg" width="30px"
-                                                        height="30px" />
-                                                    <div class="distance-text">
-                                                        5mins
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="address-text text-break  text-truncate-2" style="margin-left:.3em">
-                                            170 Vanguard Dr
-                                        </div>
-
-
-                                    </div>
-
                                 </div>
-
                             </div>
-
-
-                        </div>
-
+                        {% endif %}
                     </section>
-
-
                 </div>
+
                 <!--School-->
                 <section class=" pr-md-3 mt-3" style="margin-left:.7em; margin-right:1.5em">
                     <div class="d-flex  justify-content-between align-items-end  " style="padding-left:1rem">
@@ -989,224 +901,28 @@
                         </div>
                     </div>
                     <div class="ssectionHeader " style="padding-left:1rem"></div>
-                    <section>
-                        <div style="margin-left:1rem">
-                            <div
-                                class="d-flex flex-wrap justify-content-between align-items-end text-f-8-6 color-charcoal">
-                                <div class=" text-f-6 color-charcol" style="padding-left:.2em">
-                                    Elementary
-                                </div>
-                                <div class="mt-mt-3 text-f-6 color-charcol ">
-                                    7 more Schools on findyourneighbourhood.com
-                                </div>
-                            </div>
-                            <div class="row  " style="margin-left:.7em">
-                                {% if data["ele_school"]["closest_facility"]|length>0 %}
-                                    {% for school in data["ele_school"]["closest_facility"]%}
-                                        <div style="width:23%" class="pl-2">
-                                        <div>
-                                            <div
-                                                class='d-flex flex-column justify-content-between p-2  border-light-75 school-card-height-pdf'>
-                                                <div style="margin-left:.6em">
-                                                    <div class='d-flex flex-wrap'>
-
-                                                        <div class="d-flex align-items-center mr-1">
-                                                            <div class="bg-color-persian-green dot"></div>
-                                                            <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                                style="padding-left:.6em ;font-weight: 700;">
-                                                                French
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="d-flex align-items-center mr-1"
-                                                            style="margin-left:1rem">
-                                                            <div class="bg-color-persian-green dot"></div>
-                                                            <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                                style="margin-left:.6em; font-weight:700">
-                                                                Public
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class='text-f-6 text-wrap text-break text-truncate-2 
-                                            color-charcoal ' style='font-weight:700'>
-                                                        {{school["name"]}}
-                                                    </div>
-                                                    <div class='text-wrap text-break  text-truncate-2 color-charcoal-light-25 text-f-6 font-weight-400'
-                                                        style="font-weight:400">
-                                                        {{school["address"]}}
-                                                    </div>
-                                                </div>
-                                                <div class='d-flex flex-wrap justify-content-between mt-2'>
-                                                    <div style="margin-left:.8em">
-                                                        <img src="{{templates_path}}/full-report-icons/location-g.svg" width="32px"
-                                                            height="32px" />
-
-                                                        <div class="text-f-4  font-weight-400">
-                                                            {{school["walk"]["distance"]}}km
-                                                        </div>
-                                                    </div>
-                                                    <div style="margin-left:-.8em">
-                                                        <img src="{{templates_path}}/full-report-icons/walk-g.svg" width="32px"
-                                                            height="32px" />
-
-                                                        <div class="text-f-4 " style=" font-weight:400">
-                                                            {{school["walk"]["time"]}}mins
-                                                        </div>
-                                                    </div>
-                                                    <div style="margin-left:-.8em">
-                                                        <img src="{{templates_path}}/full-report-icons/car-g.svg" width="32px"
-                                                            height="32px" />
-
-                                                        <div class="text-f-4  font-weight-400">
-                                                            {{school["drive"]["time"]}}mins
-                                                        </div>
-                                                    </div>
-                                                    <div style="margin-right:1em">
-                                                        <img src="{{templates_path}}/full-report-icons/bike-g.svg" width="32px"
-                                                            height="32px" />
-
-                                                        <div class="text-f-4  font-weight-400">
-                                                            {{school["drive"]["time"]}}mins
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                    {% if data["ele_school"]["closest_facility"]|length>3 %}
+                        <section>
+                            <div style="margin-left:1rem">
+                                <div
+                                    class="d-flex flex-wrap justify-content-between align-items-end text-f-8-6 color-charcoal">
+                                    <div class=" text-f-6 color-charcol" style="padding-left:.2em">
+                                        Elementary
                                     </div>
-                                    {% endfor %}
-                                {% endif %}
-                                
-                            </div>
-                        </div>
-
-
-                    </section>
-                    <section>
-
-                        <div>
-                            <div class="d-flex flex-wrap justify-content-between text-f-8-6 color-charcol">
-                                <div class="text-f-6 color-charcol" style="margin-left:1em">
-                                    Secondary
+                                    <div class="mt-mt-3 text-f-6 color-charcol ">
+                                        {{(data["ele_school"]["closest_facility"]|length) - 4}} more Schools on findyourneighbourhood.com
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row " style="margin-left:.7em">
-
-                                {% if data["sec_school"]["closest_facility"]|length>0 %}
-                                    {% for school in data["sec_school"]["closest_facility"] %}
-                                        <div style="width:25%" class="pl-2">
-                                            <div style="margin-left:1em">
-                                                <div
-                                                    class='d-flex flex-column justify-content-between p-2 bg-color-persian-green-light-25 school-card-height-pdf border-persian'>
-                                                    <div style="margin-left:.6em">
-                                                        <div class='d-flex flex-wrap'>
-                                                            <div class="d-flex align-items-center mr-1">
-                                                                <div class="bg-color-persian-green dot"></div>
-                                                                <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                                    style="padding-left:.6em ;font-weight: 700;">
-                                                                    French
-                                                                </div>
-                                                            </div>
-                                                            <div class="d-flex align-items-center mr-1"
-                                                                style="margin-left:1rem">
-                                                                <div class="bg-color-persian-green dot"></div>
-                                                                <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
-                                                                    style="margin-left:.6em; font-weight:700">
-                                                                    Public
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class='setext-f-6 text-wrap text-break text-truncate-2 color-charcol'
-                                                            style='font-weight:700 ;'>
-                                                            {{school["name"]}}
-                                                        </div>
-                                                        <div class='text-wrap text-break  text-truncate-2 color-charcoal-light-25 text-f-6 font-weight-400'
-                                                            style="font-weight:400">
-                                                            {{school["address"]}}
-                                                        </div>
-                                                    </div>
-                                                    <div class='d-flex flex-wrap justify-content-between mt-2'
-                                                        style="margin-left:.6em">
-                                                        <div style="margin-left:.3em">
-                                                            <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px"
-                                                                height="32px" />
-        
-                                                            <div class="text-f-4  font-weight-400">
-                                                                {{school["walk"]["distance"]}}km
-                                                            </div>
-                                                        </div>
-                                                        <div style="margin-left:.6em">
-        
-                                                            <img src='{{templates_path}}/full-report-icons/walk-g.svg' width="32px"
-                                                                height="32px" />
-        
-                                                            <div class="text-f-4 " style=" font-weight:400">
-                                                                {{school["walk"]["time"]}}mins
-                                                            </div>
-                                                        </div>
-                                                        <div style="margin-left:.5em">
-                                                            <img src='{{templates_path}}/full-report-icons/car-g.svg' width="32px"
-                                                                height="32px" />
-        
-                                                            <div class="text-f-4  font-weight-400">
-                                                                {{school["drive"]["time"]}}mins
-                                                            </div>
-                                                        </div>
-                                                        <div style="margin-right:.8em">
-                                                            <img src='{{templates_path}}/full-report-icons/bike-g.svg' width="32px"
-                                                                height="32px" />
-        
-                                                            <div class="text-f-4  font-weight-400">
-                                                                {{school["walk"]["time"]}}mins
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-        
-                                        </div>
-                                    {% endfor %}
-                                {% endif %}
-                                
-                                 
-                            </div>
-
-
-
-
-
-
-                        </div>
-
-
-
-
-
-
-                    </section>
-
-                </section>
-                <!--Daycare-->
-                <section class="  pr-md-3" style="margin-left:2.3em ; margin-right: 2em; margin-top:1.5em ;">
-                    <div class="d-flex  sectionHeader justify-content-between align-items-center  ">
-                        <div class="d-flex align-items-center   u-color-color-charcoal ">
-                            <img src="{{templates_path}}/full-report-icons/day_care-b.svg" width="45px" height="45px" class="ml-1" />
-                            <div class="smain-text">Day Care</div>
-                        </div>
-                        <div class="subtext">
-                            4 more
-                        </div>
-                    </div>
-                    <section style="margin-top:1em">
-                        <div>
-                            <div class="row m-0 mt-2">
-                                {% if data["daycare"]["closest_facility"]|length>0 %}
-                                    {% for item in  data["daycare"]["closest_facility"] %}
-                                        <div style="width: 23.4% " class="pl-2">
+                                <div class="row  " style="margin-left:.7em">
+                                    
+                                        {% for i in range(0,4) %}
+                                            <div style="width:23%" class="pl-2">
                                             <div>
                                                 <div
-                                                    class='d-flex flex-column justify-content-between p-2  rounded1 bg-color-charcoal border-none dschool-card-height-pdf'>
-                                                    <div style="margin-left:.7em">
-                                                        <div class='d-none'>
+                                                    class='d-flex flex-column justify-content-between p-2  border-light-75 school-card-height-pdf'>
+                                                    <div style="margin-left:.6em">
+                                                        <div class='d-flex flex-wrap'>
+
                                                             <div class="d-flex align-items-center mr-1">
                                                                 <div class="bg-color-persian-green dot"></div>
                                                                 <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
@@ -1214,6 +930,7 @@
                                                                     French
                                                                 </div>
                                                             </div>
+
                                                             <div class="d-flex align-items-center mr-1"
                                                                 style="margin-left:1rem">
                                                                 <div class="bg-color-persian-green dot"></div>
@@ -1224,193 +941,317 @@
                                                             </div>
                                                         </div>
                                                         <div class='text-f-6 text-wrap text-break text-truncate-2 
-                                                text-white ' style='font-weight:700;'>
-                                                            {{item["name"]}}
+                                                color-charcoal ' style='font-weight:700'>
+                                                            {{data["ele_school"]["closest_facility"][i]["name"]}}
                                                         </div>
-                                                        <div class='text-wrap text-break  text-truncate-2 text-white text-f-6 font-weight-400'
+                                                        <div class='text-wrap text-break  text-truncate-2 color-charcoal-light-25 text-f-6 font-weight-400'
                                                             style="font-weight:400">
-                                                            {{item["address"]}}
+                                                            {{data["ele_school"]["closest_facility"][i]["address"]}}
                                                         </div>
                                                     </div>
-                                                    <div class='d-flex flex-wrap justify-content-between mt-2'
-                                                        style="margin-left:.7em">
-                                                        <div style="padding-left:-.3em">
-                                                            <img src='{{templates_path}}/full-report-icons/location.svg' width="32px"
+                                                    <div class='d-flex flex-wrap justify-content-between mt-2'>
+                                                        <div style="margin-left:.8em">
+                                                            <img src="{{templates_path}}/full-report-icons/location-g.svg" width="32px"
                                                                 height="32px" />
-        
-                                                            <div class="text-f-4 text-white font-weight-400">
-                                                                {{item["walk"]["distance"]}}km
+
+                                                            <div class="text-f-4  font-weight-400">
+                                                                {{data["ele_school"]["closest_facility"][i]["walk"]["distance"]}}km
                                                             </div>
                                                         </div>
-                                                        <div style="padding-left:-.3em">
-                                                            <img src='{{templates_path}}/full-report-icons/walk.svg' width="32px" height="32px" />
-        
-                                                            <div class="text-f-4  text-white" style=" font-weight:400">
-                                                                {{item["walk"]["time"]}}mins
+                                                        <div style="margin-left:-.8em">
+                                                            <img src="{{templates_path}}/full-report-icons/walk-g.svg" width="32px"
+                                                                height="32px" />
+
+                                                            <div class="text-f-4 " style=" font-weight:400">
+                                                                {{data["ele_school"]["closest_facility"][i]["walk"]["time"]}}mins
                                                             </div>
                                                         </div>
-                                                        <div style="padding-left:-.3em">
-                                                            <img src='{{templates_path}}/full-report-icons/car.svg' width="32px" height="32px" />
-        
-                                                            <div class="text-f-4 text-white  font-weight-400">
-                                                                {{item["drive"]["time"]}}mins
+                                                        <div style="margin-left:-.8em">
+                                                            <img src="{{templates_path}}/full-report-icons/car-g.svg" width="32px"
+                                                                height="32px" />
+
+                                                            <div class="text-f-4  font-weight-400">
+                                                                {{data["ele_school"]["closest_facility"][i]["drive"]["time"]}}mins
                                                             </div>
                                                         </div>
-                                                        <div style="padding-right:1em">
-                                                            <img src='{{templates_path}}/full-report-icons/bike.svg' width="32px" height="32px" />
-        
-                                                            <div class="text-f-4 text-white  font-weight-400">
-                                                                {{item["walk"]["time"]}}mins
+                                                        <div style="margin-right:1em">
+                                                            <img src="{{templates_path}}/full-report-icons/bike-g.svg" width="32px"
+                                                                height="32px" />
+
+                                                            <div class="text-f-4  font-weight-400">
+                                                                {{data["ele_school"]["closest_facility"][i]["drive"]["time"]}}mins
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    {% endfor %}
-                                {% endif %}
-                                <!-- <p>ends here</p> -->
+                                        {% endfor %}
+                                    
+                                </div>
                             </div>
+                        </section>
+                    {% endif %}
 
+                    {% if data["sec_school"]["closest_facility"]|length>3 %}
+                        <section>
+                            <div>
+                                <div class="d-flex flex-wrap justify-content-between text-f-8-6 color-charcol">
+                                    <div class="text-f-6 color-charcol" style="margin-left:1em">
+                                        Secondary
+                                    </div>
+                                    <div class="mt-mt-3 text-f-6 color-charcol ">
+                                        {{(data["sec_school"]["closest_facility"]|length) - 4}} more Schools on findyourneighbourhood.com
+                                    </div>
+                                </div>
+                                <div class="row " style="margin-left:.7em">
+                                        {% for i in range(0,4) %}
+                                            <div style="width:25%" class="pl-2">
+                                                <div style="margin-left:1em">
+                                                    <div
+                                                        class='d-flex flex-column justify-content-between p-2 bg-color-persian-green-light-25 school-card-height-pdf border-persian'>
+                                                        <div style="margin-left:.6em">
+                                                            <div class='d-flex flex-wrap'>
+                                                                <div class="d-flex align-items-center mr-1">
+                                                                    <div class="bg-color-persian-green dot"></div>
+                                                                    <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
+                                                                        style="padding-left:.6em ;font-weight: 700;">
+                                                                        French
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center mr-1"
+                                                                    style="margin-left:1rem">
+                                                                    <div class="bg-color-persian-green dot"></div>
+                                                                    <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
+                                                                        style="margin-left:.6em; font-weight:700">
+                                                                        Public
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class='setext-f-6 text-wrap text-break text-truncate-2 color-charcol'
+                                                                style='font-weight:700 ;'>
+                                                                {{data["sec_school"]["closest_facility"][i]["name"]}}
+                                                            </div>
+                                                            <div class='text-wrap text-break  text-truncate-2 color-charcoal-light-25 text-f-6 font-weight-400'
+                                                                style="font-weight:400">
+                                                                {{data["sec_school"]["closest_facility"][i]["address"]}}
+                                                            </div>
+                                                        </div>
+                                                        <div class='d-flex flex-wrap justify-content-between mt-2'
+                                                            style="margin-left:.6em">
+                                                            <div style="margin-left:.3em">
+                                                                <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px"
+                                                                    height="32px" />
+            
+                                                                <div class="text-f-4  font-weight-400">
+                                                                    {{data["sec_school"]["closest_facility"][i]["walk"]["distance"]}}km
+                                                                </div>
+                                                            </div>
+                                                            <div style="margin-left:.6em">
+            
+                                                                <img src='{{templates_path}}/full-report-icons/walk-g.svg' width="32px"
+                                                                    height="32px" />
+            
+                                                                <div class="text-f-4 " style=" font-weight:400">
+                                                                    {{data["sec_school"]["closest_facility"][i]["walk"]["time"]}}mins
+                                                                </div>
+                                                            </div>
+                                                            <div style="margin-left:.5em">
+                                                                <img src='{{templates_path}}/full-report-icons/car-g.svg' width="32px"
+                                                                    height="32px" />
+            
+                                                                <div class="text-f-4  font-weight-400">
+                                                                    {{data["sec_school"]["closest_facility"][i]["drive"]["time"]}}mins
+                                                                </div>
+                                                            </div>
+                                                            <div style="margin-right:.8em">
+                                                                <img src='{{templates_path}}/full-report-icons/bike-g.svg' width="32px"
+                                                                    height="32px" />
+            
+                                                                <div class="text-f-4  font-weight-400">
+                                                                    {{data["sec_school"]["closest_facility"][i]["walk"]["time"]}}mins
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+            
+                                            </div>
+                                        {% endfor %}
+                                    
+                                </div>
+                            </div>
+                        </section>
+                    {% endif %}
 
-                        </div>
-                    </section>
                 </section>
+                <!--Daycare-->
+                {% if data["daycare"]["closest_facility"]|length>3 %}
+                    <section class="  pr-md-3" style="margin-left:2.3em ; margin-right: 2em; margin-top:1.5em ;">
+                        <div class="d-flex  sectionHeader justify-content-between align-items-center  ">
+                            <div class="d-flex align-items-center   u-color-color-charcoal ">
+                                <img src="{{templates_path}}/full-report-icons/day_care-b.svg" width="45px" height="45px" class="ml-1" />
+                                <div class="smain-text">Day Care</div>
+                            </div>
+                            <div class="subtext">
+                                {{(data["daycare"]["closest_facility"]|length)-4}} more
+                            </div>
+                        </div>
+                        <section style="margin-top:1em">
+                            <div>
+                                <div class="row m-0 mt-2">
+                                        {% for i in  range(0,4) %}
+                                            <div style="width: 23.4% " class="pl-2">
+                                                <div>
+                                                    <div
+                                                        class='d-flex flex-column justify-content-between p-2  rounded1 bg-color-charcoal border-none dschool-card-height-pdf'>
+                                                        <div style="margin-left:.7em">
+                                                            <div class='d-none'>
+                                                                <div class="d-flex align-items-center mr-1">
+                                                                    <div class="bg-color-persian-green dot"></div>
+                                                                    <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
+                                                                        style="padding-left:.6em ;font-weight: 700;">
+                                                                        French
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex align-items-center mr-1"
+                                                                    style="margin-left:1rem">
+                                                                    <div class="bg-color-persian-green dot"></div>
+                                                                    <div class="text-f-4 font-weight-700 ml-1 color-persian-green"
+                                                                        style="margin-left:.6em; font-weight:700">
+                                                                        Public
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class='text-f-6 text-wrap text-break text-truncate-2 
+                                                    text-white ' style='font-weight:700;'>
+                                                                {{data["daycare"]["closest_facility"][i]["name"]}}
+                                                            </div>
+                                                            <div class='text-wrap text-break  text-truncate-2 text-white text-f-6 font-weight-400'
+                                                                style="font-weight:400">
+                                                                {{data["daycare"]["closest_facility"][i]["address"]}}
+                                                            </div>
+                                                        </div>
+                                                        <div class='d-flex flex-wrap justify-content-between mt-2'
+                                                            style="margin-left:.7em">
+                                                            <div style="padding-left:-.3em">
+                                                                <img src='{{templates_path}}/full-report-icons/location.svg' width="32px"
+                                                                    height="32px" />
+            
+                                                                <div class="text-f-4 text-white font-weight-400">
+                                                                    {{data["daycare"]["closest_facility"][i]["walk"]["distance"]}}km
+                                                                </div>
+                                                            </div>
+                                                            <div style="padding-left:-.3em">
+                                                                <img src='{{templates_path}}/full-report-icons/walk.svg' width="32px" height="32px" />
+            
+                                                                <div class="text-f-4  text-white" style=" font-weight:400">
+                                                                    {{data["daycare"]["closest_facility"][i]["walk"]["time"]}}mins
+                                                                </div>
+                                                            </div>
+                                                            <div style="padding-left:-.3em">
+                                                                <img src='{{templates_path}}/full-report-icons/car.svg' width="32px" height="32px" />
+            
+                                                                <div class="text-f-4 text-white  font-weight-400">
+                                                                    {{data["daycare"]["closest_facility"][i]["drive"]["time"]}}mins
+                                                                </div>
+                                                            </div>
+                                                            <div style="padding-right:1em">
+                                                                <img src='{{templates_path}}/full-report-icons/bike.svg' width="32px" height="32px" />
+            
+                                                                <div class="text-f-4 text-white  font-weight-400">
+                                                                    {{data["daycare"]["closest_facility"][i]["walk"]["time"]}}mins
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+                {% endif %}
 
                 <!--Groceries-->
                 <section class="d-flex  align-items-start mt-2 " style="margin-left:2rem">
-                    <section class="  pr-md-3  rese  " style="width: 48%">
-                        <div class="d-flex  sectionHeader justify-content-between align-items-center  ">
-                            <div class="d-flex align-items-center   u-color-color-charcoal ">
-                                <img src="{{templates_path}}/full-report-icons/grocery-b.svg" width="45px" height="45px" />
-                                <div class=" smain-text">Groceries</div>
+                    
+                    {% if data["grocery"]["minor_closest_facility"]|length > 3 %}
+                        <section class="  pr-md-3  rese  " style="width: 48%">
+                            <div class="d-flex  sectionHeader justify-content-between align-items-center  ">
+                                <div class="d-flex align-items-center   u-color-color-charcoal ">
+                                    <img src="{{templates_path}}/full-report-icons/grocery-b.svg" width="45px" height="45px" />
+                                    <div class=" smain-text">Groceries</div>
+                                </div>
+                                <div class="subtext">
+                                    {{(data["grocery"]["minor_closest_facility"]|length)-4}} more
+                                </div>
                             </div>
+                            <div class="d-flex mt-3 flex-wrap">
 
-                            <div class="subtext">
-                                4 more
-                            </div>
-
-                        </div>
-
-
-                        <div class="d-flex mt-3 flex-wrap">
-
-                            <div class="col-6 m-0  p-0">
-                                <div class="d-flex">
-                                    <div>
-                                        <div class='pdfHeight p-2 border-right-gc resed'>
-
-                                            <div class="d-flex  justify-content-between align-items-center ">
-
-                                                <Badge class="rounded color-75 p-1 gtext-f-4 font-weight-400">
-                                                    Farm Boy
-                                                </Badge>
-
-                                                <div></div>
-
-                                                <div class="d-flex flex-column align-items-center res">
-                                                    <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px"
-                                                        height="32px" />
-                                                    <div class="text-f-4 text-nowrap">
-                                                        3.1km
+                                <div class="col-6 m-0  p-0">
+                                    <div class="d-flex">
+                                        <div>
+                                            {% if data["grocery"]["major_closest_facility"]|length > 1 %}
+                                                {% for i in range(0,2)  %}
+                                                    <div class='pdfHeight p-2 border-right-gc resed'>
+                                                        <div class="d-flex  justify-content-between align-items-center ">
+                                                            <Badge class="rounded color-75 p-1 gtext-f-4 font-weight-400">
+                                                                    {{data["grocery"]["major_closest_facility"][i]["name"]}}
+                                                            </Badge>
+                                                            <div></div>
+                                                            <div class="d-flex flex-column align-items-center res">
+                                                                <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px"
+                                                                    height="32px" />
+                                                                <div class="text-f-4 text-nowrap">
+                                                                    {{ data["grocery"]["major_closest_facility"][i]["drive"]["distance"]}}km
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-f-6 color-75  text-truncate-2 font-weight-400">
+                                                            {{data["grocery"]["major_closest_facility"][i]["address"]}}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="text-f-6 color-75  text-truncate-2 font-weight-400">
-                                                3rd tek Road
-                                            </div>
-
+                                                {% endfor %}
+                                            {% endif %}
                                         </div>
-                                        <div class='pdfHeight p-2 border-top-gc resed'>
-
-                                            <div class="d-flex  justify-content-between align-items-center ">
-
-                                                <Badge class="rounded color-75 p-1 gtext-f-4 font-weight-400">
-                                                    Farm Boy
-                                                </Badge>
-
-                                                <div></div>
-
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px"
-                                                        height="32px" />
-                                                    <div class="text-f-4 text-nowrap">
-                                                        3.1km
+                                        <div>
+                                            {% if data["grocery"]["minor_closest_facility"]|length > 1 %}
+                                                {% for i in range(0,2) %}
+                                                    <div class='pdfHeight p-2 border-bottom-gc resed'>
+                                                        <div class="d-flex  justify-content-between align-items-center ">
+                                                            <div class="rounded color-75 p-1 gtext-f-4 font-weight-400">
+                                                                {{data["grocery"]["minor_closest_facility"][i]["name"]}}
+                                                            </div>
+                                                            <div></div>
+                                                            <div class="d-flex flex-column align-items-center">
+                                                                <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px"
+                                                                    height="32px" />
+                                                                <div class="text-f-4 text-nowrap">
+                                                                    {{data["grocery"]["minor_closest_facility"][i]["drive"]["distance"]}}km
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-f-6 color-75  text-truncate-2 font-weight-400">
+                                                            {{data["grocery"]["minor_closest_facility"][i]["address"]}}
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <div class="text-f-6 color-75  text-truncate-2 font-weight-400">
-                                                3rd tek Road
-                                            </div>
-
+                                                {% endfor %}
+                                            {% endif %}
+                                            
                                         </div>
-
-                                    </div>
-
-                                    <div>
-                                        <div class='pdfHeight p-2 border-bottom-gc resed'>
-
-                                            <div class="d-flex  justify-content-between align-items-center ">
-
-                                                <div class="rounded color-75 p-1 gtext-f-4 font-weight-400">
-                                                    Farm Boy
-                                                </div>
-
-                                                <div></div>
-
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px"
-                                                        height="32px" />
-                                                    <div class="text-f-4 text-nowrap">
-                                                        3.1km
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="text-f-6 color-75  text-truncate-2 font-weight-400">
-                                                3rd tek Road
-                                            </div>
-
-                                        </div>
-                                        <div class='pdfHeight p-2 border-left-gc resed'>
-
-                                            <div class="d-flex  justify-content-between align-items-center ">
-
-                                                <Badge class="rounded color-75 p-1 gtext-f-4 font-weight-400">
-                                                    Farm Boy
-                                                </Badge>
-
-                                                <div></div>
-
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px"
-                                                        height="32px" />
-                                                    <div class="text-f-4 text-nowrap">
-                                                        3.1km
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="text-f-6 color-75  text-truncate-2 font-weight-400">
-                                                3rd tek Road
-                                            </div>
-
-                                        </div>
-
                                     </div>
                                 </div>
-
-
                             </div>
-                        </div>
-
-
-
-                    </section>
+                        </section>
+                    {% endif %}
                     <section class="pr-md-3 rese " style="width: 48% ;margin-left:2rem">
                         <div class="d-flex  sectionHeader justify-content-between align-items-center  ">
                             <div class="d-flex align-items-center   color-charcoal ">
                                 <img src="{{templates_path}}/full-report-icons/bar-b.svg" width="40px" height="40px" />
                                 <div class=" smain-text">
-                                    Restaurant, Bars and Cafe
+                                    Restaurant,Bars and Cafe
                                 </div>
                             </div>
 
