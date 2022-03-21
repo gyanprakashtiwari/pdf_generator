@@ -34,8 +34,8 @@ def get_pdf():
 
     try:
         rendered = render_template("index.html",templates_path=path,data = all_data)
-        css = ['templates/main.css']
-        pdfkit.from_string(rendered,"output.pdf",css=css)
+        # css = ['templates/main.css']
+        pdfkit.from_string(rendered,"output.pdf")
     except:
         return {"msg":"some error in generating pdf"}
 

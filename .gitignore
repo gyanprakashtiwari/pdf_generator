@@ -2,7 +2,6 @@
 *.DS_Store
 **/__pycache__
 **/.DS_Store
-*.pdf
 env
 migrations
 venv
