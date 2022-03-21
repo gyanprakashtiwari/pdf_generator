@@ -1,0 +1,1694 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <!-- CSS only -->
+    <!-- <link rel="stylesheet" href="new.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Effort', 'Amount given'],
+                ['My all', 3],
+                ['work', 7],
+                ['1960', 10],
+                ['1969',50]
+                ,
+            ]);
+
+            var options = {
+                pieHole: 0.7,
+
+                legend: 'none',
+                slices: {
+                    0: { color: '#2a9d8f' },
+                    1: { color: '#e9c46a' },
+                    2:{color:'#e76f51'},
+                    3:{color:'#6c4b5e'}
+
+                },
+                backgroundColor: 'none',
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('donut_single'));
+            chart.draw(data, options);
+        }
+    </script>
+    <style>
+        :root{
+        --btn-font-family: 'Source Sans Pro';
+        --btn-font-weight: 600;
+        --btn-border-width: 1px;
+        --btn-disabled-opacity: 0.65;
+
+        --color-golden-yellow: #fcb112;
+        --color-golden-yellow-light: #fffbf3;
+        --color-golden-yellow-light-10: #f0e3c8;
+        --color-golden-yellow-light-20: #fffdd0;
+        --color-golden-yellow-light-30: #eecb80;
+        --color-golden-yellow-dark: #e0aa36;
+        --color-golden-yellow-dark-10: #e39f10;
+        --color-golden-yellow-dark-15: #d6960f;
+        --color-salmon: #ff8765;
+        --color-white: #ffffff;
+        --color-black: #000000;
+        --color-grey: #f6f6f6;
+        --color-greyblue: #7eb7b7;
+        --color-charcoal-light-50: #93a3a9;
+        --color-charcoal: #264653;
+        --color-charcoal-light-10: #25596d;
+        --color-charcoal-light-95: #f4f6f6;
+        --color-charcoal-light-25: #5c747e;
+        --color-charcoal-light-35: #818d92;
+        --color-charcoal-light-75: #c9d1d4;
+        --color-charcoal-light-85: #dee3e5;
+        --color-charcoal-dark: #132329;
+        --color-charcoal-dark-75: #0a1215;
+
+        --color-persian-green-light-25: #cae7e3;
+        --color-persian-green-light-50: #94cec7;
+        --color-persian-green-light-75: #cae7e3;
+        --color-persian-green: #2a9d8f;
+        --color-persian-green-dark-25: #1f766b;
+        --color-persian-green-dark-50: #154f47;
+        --color-persian-green-dark-75: #0a2724;
+        --color-persian-green-dark-95: #264653;
+        --color-sky-blue: #67b9b9;
+        --color-sky-blue-dark: #5ba2a2;
+        --color-sky-blue-light: #a7d5d5;
+        --color-dark-blue: #25596d;
+        --color-burnt-sienna-light: #f5bcab;
+        --color-burnt-sienna: #e76f51;
+        --color-burnt-sienna-dark-10: #d06449;
+        --color-burnt-sienna-dark-25: #ad533d;
+
+        --color-red-light: #f8eae6;
+        --color-blue: #85a7d2;
+        --color-blue-light: #eef2fa;
+        --color-green: #3ea378;
+        --color-green-light: #e9faf1;
+        --color-blue-dark: #306ab0;
+        --greyish-brown: #4a4a4a;
+        --color-submarine: #93a3a9;
+        --color-pale-grey: #dfeff1;
+        --color-brownish-orange: #c96e23;
+
+        }
+        .headcolor{
+        color:#264653;
+        }
+        .sectionHeader {
+        border-bottom: 4px solid var(--color-persian-green);
+        padding-bottom: 0.8rem;
+        }
+
+        /*header */
+        .neighbour-name {
+            font-size: 1.2rem;
+            line-height: 1rem;
+            font-weight: bold;
+            color:#2a9d8f;
+            padding-top:2rem;
+            margin-left: 12%;
+        }
+        .font-circuler-std {
+            font-family: 'DM Sans', sans-serif;
+        }
+        .province-text {
+            font-size: 1.2rem ;
+            line-height: 1rem;
+            font-weight:500;
+            margin-left: -10%;
+            padding-top: 2rem;
+            display: table-cell;
+            
+        }
+        .htext-f-6 {
+            font-size: .8rem;
+            font-weight: 600;
+        }
+        .detail{
+            margin-left:8%
+
+        }
+        .himg{
+            height:4rem;
+            padding-top:1rem;
+        }
+        .heimg{
+            margin-top:1rem;
+            margin-right:-4rem;
+            
+            
+            
+        }
+        .heig{
+            float:right;
+
+        }
+        
+                
+        /*overview*/
+        .Otext-f-4 {
+        font-size: 0.8rem ;
+        } 
+
+        .Otext-f-4-5 {
+        font-size: 1rem ;
+        font-weight:600;
+        }
+
+        .otxt{
+        padding-left:.9rem;
+        font-weight: 400
+        }
+        .fa{
+        font-size: 15px !important;
+        
+        }
+        .star{
+        padding-left: 10px;
+        }
+        /*Real */
+        .text-f-6 {
+        font-size: 1rem ;
+        font-weight: 600;
+        }
+        .color-charcol{
+        color:var(--color-charcoal);
+
+        }
+
+        .content {
+        font-size: .6rem;
+        color: var(--color-charcoal-light-50);
+        }
+        .bg-color-persian-green{
+        background-color:var(--color-persian-green);
+        }
+        .rtext-f-8-6 {
+        font-size: 0.5rem !important;
+        }
+        .color-charcoal-dark{
+        color:var(--color-charcoal)
+        }
+        .chart-background {
+        background: #f8ddae;
+        }
+        .button{
+        width:50px;
+        height:25px;
+        background-color: #0a2724;
+        border-radius: 7px;
+        padding: 3px;
+        font-size:10px;
+
+        }
+        /*sd*/
+        .sdheading {
+        font-size: .8rem;
+        font-weight: 500;
+        }
+        .sdcontent {
+        font-size: 0.8rem;
+        font-weight: 700;
+        }
+        .sdsubtext {
+        font-size: 0.8rem;
+        color: var(--color-charcoal-light-50);
+        }
+        .border-right {
+        border-right: 2px solid var(--color-charcoal-light-50);
+        padding-right: 0.6rem !important;
+        }
+
+        /*demo*/
+        .subhead{
+        color:#2a9d8f
+        }
+        .dheading {
+        font-size: 1rem;
+        color: var(--color-charcoal);
+        font-weight: 500;
+
+        }
+
+        .maintext {
+        font-size: 1.5rem;
+        color: #2a9d8f;
+        font-weight: bold;
+        padding-left: .5em;
+        }
+        .demographics {
+        background-color: var(--color-persian-green-light-75);
+        }
+        .hth{
+        font-size: 1.05rem;
+        font-weight: 500;
+        }
+        .hsth{
+        font-size:.8rem;
+        font-weight: 400;
+        }
+        .heading-text {
+        font-weight: bold;
+        font-size: 1.1rem !important;
+        line-height: 1rem;
+        color: var(--color-charcoal-light-25);
+        }
+        .distance-text {
+        font-size: 0.6rem;
+        color: var(--color-charcoal-light-25);
+        }
+        .address-text {
+        font-size: 0.8rem;
+        line-height: 1.1rem;
+        color: var(--color-charcoal-light-25);
+        }
+        .dot{
+        height: 10px;
+        width: 10px;
+        background-color: #2a9d8f;
+        border-radius: 50%;
+        display: inline-block;
+        }
+        .dottxt{
+        color:#2a9d8f; font-weight:500;
+        }
+
+        .stext{
+        color:#264653;
+        font-size: 1.2rem ;
+        font-weight:700
+            
+        }
+
+        .sstext{
+        color:#5c747e;
+        font-weight:400;
+        }
+        .border-light-75 {
+        border: 2px solid var(--color-charcoal-light-75);
+        border-radius: 0.5rem;
+        }
+        .setext-f-6 {
+        font-size: 1.4rem !important;
+        font-weight: 600;
+        color:var(--color-charcoal)
+        }.bg-color-persian-green-light-25
+
+        {
+        background-color:var(--color-persian-green-light-25);
+        border-radius: .5em;
+        }
+
+        .border-persian{
+        border: 2px solid;
+        color: var(--color-persian-green);
+
+        }
+
+
+        /*day care*/
+        .dmain-text{
+        font-size: 2rem;
+        font-weight: 400;
+        color:var(--color-charcoal);
+        padding-left:.8rem;
+        }
+
+        .dsubtext{
+        
+            font-size: 1.6rem;
+            color: var(--color-persian-green);
+        }
+        .dbg-color-charcoal{
+            background-color: var(--color-charcoal);
+        } 
+        
+        .bg-color-persian-green-light-50{
+        background-color: #94cec7;
+        }
+
+        /*groceries*/
+            .pdfHeight {
+                min-height: 10rem;
+                min-width:16rem
+            }
+            .border-left-gc {
+                border-left: 2px solid var(--color-charcoal-light-75);
+            }
+            .border-right-gc {
+                border-right: 2px solid var(--color-charcoal-light-75);
+            }
+            .border-top-gc {
+                border-top: 2px solid var(--color-charcoal-light-75);
+            }
+            .border-bottom-gc {
+                border-bottom: 2px solid var(--color-charcoal-light-75);
+            }
+
+            .bg-color-persian-green-light-50{
+                background-color: var(--color-persian-green-light-50);
+            }
+            .gtext-f-4 {
+                font-size: 1.3rem ;
+            }
+            .color-75{
+                color:var(--color-charcoal-light-50)
+            }
+
+            /*health*/
+            .hltbor{
+            border: 2px solid var(--color-charcoal-light-75);
+            }
+    </style>
+</head>
+
+<body>
+    <table style="width:100%; height:100%;">
+
+        <!--header-->
+        <tr style="margin-left:2rem;margin-right:2rem; margin-top:3rem;">
+            
+            <td>
+                <img class="himg" src="{{templates_path}}/Vector.png">
+            </td>
+            <td class="neighbour-name font-circuler-std">
+                Ottawa-895, Ottawa
+            </td>
+            <td class="province-text font-circuler-std   font-weight-400">
+                (Ontario)
+            </td>
+            <td>
+                <div class="detail" style="display:block">
+                    <div class=" htext-f-6">
+                        Agent Xyzeee
+                    </div>
+
+                    <div class="htext-f-6">
+                        ananjaja@gmail.com
+                    </div>
+                    <div class="htext-f-6">
+                        Phone:8786758788
+                    </div>
+                </div>
+            </td>
+            <td class="heimg">
+                <img style="width:52px; height:52px" class="border rounded-circle heig" crossorigin="anonymous" />
+
+            </td>
+            
+        </tr>
+
+    </table>
+    <!-- OVERVIEW CARD -->
+    <table style="width:100%; padding:10px;color:white;margin-top: 3rem;background-color:#2a9d8f;table-layout: fixed;">
+        <tr style="padding:10px">
+            <td style=" width: 38%;">
+                <img style="padding:.8rem;" alt="Map Location" height="100%" width="100%"></img>
+            </td>
+            <td>
+                <table style="width:100%; table-layout: fixed; padding:30px">
+                    <tr>
+                        {% if data["sec_school"]["closest_facility"]|length>0  %}
+                            <td style="padding:12px; width:40%; padding-top: 2rem;">
+                                <div class="d-flex">
+                                    <img src="{{templates_path}}/full-report-icons/school.svg" style="
+                                                                filter:
+                                                            'invert(1%) sepia(90%) saturate(1852%) hue-rotate(350deg) brightness(101%) contrast(98%)';
+                                                            height:25px ;width:25px" />
+                                    <div class="otxt" style="display:block">
+
+                                        <div class="Otext-f-4">
+                                            Secondary School
+                                        </div>
+                                        <div class="Otext-f-4-5">
+                                            Total Secondary School: {{(data["sec_school"]["closest_facility"])|count}} 
+                                        </div>
+                                    </div>
+                                    <div class="d-flex star">
+                                        {% for starcount in range(0,5)%}
+                                            {% if starcount < data["sec_school"]["facility_rating"]|int %}
+                                                <span class="fa fa-star checked"></span>
+                                            {% else %}
+                                                <span class="fa fa-star"></span>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </td>
+                        {% endif %}
+
+                        {% if data["ele_school"]["closest_facility"]|length>0  %}
+                        
+                            <td style="padding:12px;padding-top: 2rem;">
+                                <div class="d-flex">
+                                    <img src="{{templates_path}}/full-report-icons/school.svg" style="
+                                                            filter:
+                                                        'invert(1%) sepia(90%) saturate(1852%) hue-rotate(350deg) brightness(101%) contrast(98%)';
+                                                        height:25px ;width:25px" />
+                                    <div class="otxt" style="display:block">
+
+                                        <div class="Otext-f-4">
+                                            Elementary School
+                                        </div>
+                                        <div class="Otext-f-4-5">
+                                            Total Elementary School : {{(data["ele_school"]["closest_facility"])|count}}
+                                        </div>
+                                    </div>
+                                    <div class="d-flex star">
+                                        {% for starcount in range(0,5)%}
+                                            {% if starcount < data["ele_school"]["facility_rating"]|int %}
+                                                <span class="fa fa-star checked"></span>
+                                            {% else %}
+                                                <span class="fa fa-star"></span>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        {% if data["bar"]["closest_facility"]|length>0  %}
+                            <td style="padding:12px">
+                                <div class="d-flex" style="margin-top:0rem;padding-top: 0rem;">
+                                    <img src="{{templates_path}}/full-report-icons/bar.svg" style="
+                                                        filter:
+                                                        'invert(1%) sepia(90%) saturate(1852%) hue-rotate(350deg) brightness(101%) contrast(98%)';
+                                                        height:25px ;width:25px" />
+                                    <div class="otxt" style="display:block">
+
+                                        <div class="Otext-f-4">
+                                            Bar
+                                        </div>
+                                        <div class="Otext-f-4-5">
+                                            Total Bars : {{(data["bar"]["closest_facility"])|count}}
+                                        </div>
+                                    </div>
+                                    <div class="d-flex star">
+
+                                        {% for starcount in range(0,5)%}
+                                            {% if starcount < data["bar"]["facility_rating"]|int %}
+                                                <span class="fa fa-star checked"></span>
+                                            {% else %}
+                                                <span class="fa fa-star"></span>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </td>
+                        {% endif %}
+
+                        {% if data["daycare"]["closest_facility"]|length>0  %}
+                            <td style="padding:12px">
+                                <div class="d-flex" style="margin-top:0rem;padding-top: 0rem;">
+                                    <img src="{{templates_path}}/full-report-icons/day_care.svg" style="
+                                                        filter:
+                                                        'invert(1%) sepia(90%) saturate(1852%) hue-rotate(350deg) brightness(101%) contrast(98%)';
+                                                        height:25px ;width:25px" />
+                                    <div class="otxt" style="display:block">
+
+                                        <div class="Otext-f-4">
+                                            Daycare
+                                        </div>
+                                        <div class="Otext-f-4-5">
+                                            Total Daycare: {{(data["daycare"]["closest_facility"])|count}}
+                                        </div>
+                                    </div>
+                                    <div class="d-flex star">
+
+                                        {% for starcount in range(0,5)%}
+                                            {% if starcount < data["daycare"]["facility_rating"]|int %}
+                                                <span class="fa fa-star checked"></span>
+                                            {% else %}
+                                                <span class="fa fa-star"></span>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        {% if data["healthcare"]["major_closest_facility"]|length>0  %}
+                            <td style="padding:12px">
+                                <div class="d-flex" style="margin-top:0rem;padding-top: 0rem;">
+                                    <img src="{{templates_path}}/full-report-icons/health_care.svg" style="
+                                                        filter:
+                                                        'invert(1%) sepia(90%) saturate(1852%) hue-rotate(350deg) brightness(101%) contrast(98%)';
+                                                        height:25px ;width:25px" />
+                                    <div class="otxt" style="display:block">
+
+                                        <div class="Otext-f-4">
+                                            Healthcare
+                                        </div>
+                                        <div class="Otext-f-4-5">
+                                            Total Healthcare: {{(data["healthcare"]["major_closest_facility"])|count}}
+                                        </div>
+                                    </div>
+                                    <div class="d-flex star">
+
+                                        {% for starcount in range(0,5)%}
+                                            {% if starcount < data["healthcare"]["facility_rating"]|int %}
+                                                <span class="fa fa-star checked"></span>
+                                            {% else %}
+                                                <span class="fa fa-star"></span>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </td>
+                        {% endif %}
+                        {% if data["grocery"]["major_closest_facility"]|length>0  %}
+                            <td style="padding:12px">
+                                <div class="d-flex" style="margin-top:0rem;padding-top: 0rem;">
+                                    <img src="{{templates_path}}/full-report-icons/grocery.svg" style="
+                                                        filter:
+                                                        'invert(1%) sepia(90%) saturate(1852%) hue-rotate(350deg) brightness(101%) contrast(98%)';
+                                                        height:25px ;width:25px" />
+                                    <div class="otxt" style="display:block">
+
+                                        <div class="Otext-f-4">
+                                            Grocery
+                                        </div>
+                                        <div class="Otext-f-4-5">
+                                            Total Grocery: {{(data["grocery"]["major_closest_facility"])|count}}
+                                        </div>
+                                    </div>
+                                    <div class="d-flex star">
+
+                                        {% for starcount in range(0,5)%}
+                                            {% if starcount < data["grocery"]["facility_rating"]|int %}
+                                                <span class="fa fa-star checked"></span>
+                                            {% else %}
+                                                <span class="fa fa-star"></span>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        {% if data["cafe"]["closest_facility"]|length>0  %}
+                            <td style="padding:12px">
+                                <div class="d-flex" style="margin-top:0rem;padding-top: 0rem;">
+                                    <img src="{{templates_path}}/full-report-icons/restaurant.svg" style="
+                                                        filter:
+                                                        'invert(1%) sepia(90%) saturate(1852%) hue-rotate(350deg) brightness(101%) contrast(98%)';
+                                                        height:25px ;width:25px" />
+                                    <div class="otxt" style="display:block">
+
+                                        <div class="Otext-f-4">
+                                            Cafe
+                                        </div>
+                                        <div class="Otext-f-4-5">
+                                            Total Cafe: {{(data["cafe"]["closest_facility"])|count}}
+                                        </div>
+                                    </div>
+                                    <div class="d-flex star">
+
+                                        {% for starcount in range(0,5)%}
+                                            {% if starcount < data["cafe"]["facility_rating"]|int %}
+                                                <span class="fa fa-star checked"></span>
+                                            {% else %}
+                                                <span class="fa fa-star"></span>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </td>
+                        {% endif %}
+                        {% if data["restaurant"]["closest_facility"]|length>0  %}
+                            <td style="padding:12px">
+                                <div class="d-flex" style="margin-top:0rem;padding-top: 0rem;">
+                                    <img src="{{templates_path}}/full-report-icons/restaurant.svg" style="
+                                                        filter:
+                                                        'invert(1%) sepia(90%) saturate(1852%) hue-rotate(350deg) brightness(101%) contrast(98%)';
+                                                        height:25px ;width:25px" />
+                                    <div class="otxt" style="display:block">
+
+                                        <div class="Otext-f-4">
+                                            Restaurant
+                                        </div>
+                                        <div class="Otext-f-4-5">
+                                            Total Restaurant: {{(data["restaurant"]["closest_facility"])|count}}
+                                        </div>
+                                    </div>
+                                    <div class="d-flex star">
+
+                                        {% for starcount in range(0,5)%}
+                                            {% if starcount < data["restaurant"]["facility_rating"]|int %}
+                                                <span class="fa fa-star checked"></span>
+                                            {% else %}
+                                                <span class="fa fa-star"></span>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </td>
+                        {% endif %}
+                    </tr>
+                    <tr>
+                        {% if data["walkscore"]|length==3 %}
+                            <table>
+                                <tr>
+                                    <td style="width:5%;padding:12px">
+                                        <img src="{{templates_path}}/full-report-icons/navigation.svg"
+                                            style="
+                                filter:
+                                    invert(1%) sepia(90%) saturate(1852%) hue-rotate(350deg) brightness(101%) contrast(98%);" height="25px" width="25px" />
+                                    </td>
+                                    <td style="width:95%;padding: 12px;" class="oltxt">
+                                        <div style="display:block">
+                                            <div class="Otext-f-4">
+                                                Walk, Transit and Bike score
+                                            </div>
+                                            <div class="Otext-f-4-5">
+                                                Walk Score : {{data["walkscore"][0]["score_value"]}} | Car-Dependent <br>
+                                                Bike Score : {{data["walkscore"][1]["score_value"]}} | Bikeable<br>
+                                                Transit Score : {{data["walkscore"][2]["score_value"]}}  | Some Transit
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        {% endif %}
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+
+    <!-- REAL STATE CARD -->
+    <table class="sectionHeader" style="width: 100%; table-layout: fixed;margin-top:2rem ">
+        <tr>
+            <td style="width: 3%;">
+                <img src="{{templates_path}}/full-report-icons/home.svg">
+            </td>
+
+            <td class="headcolor" style="font-size: 25px;padding-left:.5em">Real Estate Data</td>
+            <td class="subhead" style="float:right; font-size:20px; text-align: right;">
+                Statistics
+            </td>
+        </tr>
+    </table>
+
+    <table style="width:100%">
+        <tr>
+            <td style="width:50%;">
+                <div style=" margin-top:-4rem">
+                    <div width="50%">
+                        <p class="text-f-6">Dwelling Type</p>
+                    </div>
+                    <div style="margin-left:30px; margin-top:-2rem;">
+                        <table width="100%">
+                            <tr>
+                                <td class="content color-charcoal" style="padding-top: 1.5rem;"> Single-detached house
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bg-color-persian-green  rtext-f-8-6 text-white"
+                                    style="width:60%;border-top-right-radius:10px ; border-bottom-right-radius:10px; height: .5rem ;">
+                                </td>
+                                <td class="text-f-4 color-charcoal-dark"
+                                    style="min-width: 1.2rem ;font-weight:600 ; padding-left: .6rem;font-size: .7em;">
+                                    60% </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="margin-left:30px; margin-top:-1rem">
+                        <table width="100%">
+                            <tr>
+                                <td class="content color-charcoal" style="padding-top: 1.5rem;"> Single-detached house
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bg-color-persian-green  rtext-f-8-6 text-white"
+                                    style="width:60%;border-top-right-radius:25px ; border-bottom-right-radius:25px; height: 1rem ;">
+                                </td>
+                                <td class="text-f-4 color-charcoal-dark"
+                                    style="min-width: 1.2rem ;font-weight:700 ; padding-left: .6rem;font-size: .7em;">
+                                    60% </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="margin-left:30px; margin-top:-1rem">
+                        <table width="100%">
+                            <tr>
+                                <td class="content color-charcoal" style="padding-top: 1.5rem;"> Single-detached house
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bg-color-persian-green  rtext-f-8-6 text-white"
+                                    style="width:60%;border-top-right-radius:25px ; border-bottom-right-radius:25px; height: 1rem ;">
+                                </td>
+                                <td class="text-f-4 color-charcoal-dark"
+                                    style="min-width: 1.2rem ;font-weight:700 ; padding-left: .6rem;font-size: .7em; ">
+                                    60% </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="margin-left:30px; margin-top:-1rem">
+                        <table width="100%">
+                            <tr>
+                                <td class="content color-charcoal" style="padding-top: 1.5rem;"> Single-detached house
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bg-color-persian-green  rtext-f-8-6 text-white"
+                                    style="width:60%;border-top-right-radius:25px ; border-bottom-right-radius:25px; height: 1rem ;">
+                                </td>
+                                <td class="text-f-4 color-charcoal-dark"
+                                    style="min-width: 1.2rem ;font-weight:700 ; padding-left: .6rem;font-size: .7em;">
+                                    60% </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div style="margin-left:30px; margin-top:-1rem">
+                        <table width="100%">
+                            <tr>
+                                <td class="content color-charcoal" style="padding-top: 1.5rem;"> Single-detached house
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bg-color-persian-green  rtext-f-8-6 text-white"
+                                    style="width:60%;border-top-right-radius:25px ; border-bottom-right-radius:25px; height: 1rem ;">
+                                </td>
+                                <td class="text-f-4 color-charcoal-dark"
+                                    style="min-width: 1.2rem ;font-weight:700 ; padding-left: .6rem;font-size: .7em;">
+                                    60% </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </td>
+            <td width="50%">
+                <div class="chart-background " style=" float:right; margin-top:.5rem; border-radius:10px ;">
+                    <table>
+                        <tr>
+                            <div style="font-size:1.2em; font-weight:600;padding-left: .8em; padding-top: .6em;">
+                                Year of construction
+                            </div>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table style="margin-left: 1em;margin-top:-8rem;border-collapse: separate;border-spacing: 0px, 5px;">
+                                    <tr style="margin-top:1em">
+                                        <td class="button" style=" background-color:#2a9d8f;padding-left: .8em; margin:2px; color:white">1.5%</td>
+                                        <td style="font-size:.7rem; padding-left: .2rem;">1960</td>
+                                    </tr>
+                                    <tr style="margin-top:1em;border:1px solid">
+                                        <td class="button" style="background-color:#e9c46a;padding-left: .8em; margin:2px; color:white">1.5%</td>
+                                        <td style="font-size:.7rem; padding-left: .2rem;">1960</td>
+                                    </tr>
+                                    <tr style="margin-top:.3em">
+                                        <td class="button" style="background-color:#e76f51;padding-left: .8em; margin:2px; color:white">1.5%</td>
+                                        <td style="font-size:.7rem; padding-left: .2rem;">1960</td>
+                                    </tr>
+                                    <tr style="margin-top:.3em">
+                                        <td class="button" style="background-color:#6c4b5e;padding-left: .8em; margin:2px; color:white">1.5%</td>
+                                        <td style="font-size:.7rem; padding-left: .2rem;">1960</td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td>
+                                <div style="margin-top:-1em">
+                                    <div id="donut_single" style="width: 280px; height: 280px;"></div>
+
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+    <!-- DEMOGRAPHICS -->
+
+    <table class="sectionHeader" style="width: 100%; table-layout: fixed; margin-top: 2rem;">
+        <tr>
+            <td style="width: 3%;">
+                <img src="{{templates_path}}/full-report-icons/peoples.svg" width="30px">
+            </td>
+
+            <td class="headcolor" style="font-size: 25px;padding-left:.5em">Demographics</td>
+            <td class="subhead" style="float:right; font-size:20px">
+                Education Employment & Transportation
+            </td>
+        </tr>
+    </table>
+
+    <table class="demographics" style="width: 100%; table-layout: fixed;">
+        <tr>
+            <td style="width: 48%;">
+                <table style="width: 90%; table-layout: fixed;margin-left: 20px;">
+                    <tr style="margin-bottom: 1rem;">
+                        <td style="width: 16%;padding-bottom: 1rem;padding-top: 1rem; ">
+                            <div style="margin-top:rem ;">
+                                <p class="dheading">Total Households</p>
+                                <div style="margin-top:-1rem">
+                                    <img src="{{templates_path}}/full-report-icons/home.svg" style=" width:35px">
+                                    <span class="maintext" style="margin-top: -2rem;">998
+                                </div>
+                            </div>
+                            </div>
+                        </td>
+                        <td style="width: 16%;">
+                            <div style="margin-top:rem ;">
+                                <p class="dheading ">Population</p>
+                                <div style="margin-top:-1rem">
+                                    <img src="{{templates_path}}/full-report-icons/peoples.svg" style="width:30px">
+                                    <span class="maintext">2,563</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width: 16%;">
+                            <div style="margin-top:rem ;">
+                                <p class="dheading">Owned</p>
+                                <div style="margin-top:-1rem">
+                                    <img src="{{templates_path}}/full-report-icons/owned.svg" style="width:30px">
+                                    <span class="maintext">88.9%</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="width: 16%;">
+                            <div style="margin-top:rem ;">
+                                <p class="dheading">Rented</p>
+                                <div style="margin-top:-1rem">
+                                    <img src="{{templates_path}}/full-report-icons/rent.svg" style="width:30px">
+                                    <span class="maintext">11.1%</span>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+            <td style="width: 24%;margin-right:2rem">
+                <div style="width:80%">
+                    <p class="dheading" style="margin-bottom:1px; margin-top:.3rem">Households with kids</p>
+                    <div class="d-flex">
+                        <div class=" text-white" style="background-color: #2a9d8f; border-top-left-radius: .4em; border-bottom-left-radius: .4em; width:7rem;height:1.5rem;
+                width:49.6%;"></div>
+                        <div class=" text-white " style=" background-color: #fcb112;;
+                width: 50.4%;
+              
+                border-top-right-radius: .4em; border-bottom-right-radius: .4em;
+                
+                "></div>
+                    </div>
+
+                    <span class="dot" style="background-color:#2a9d8f; "></span>
+                    <span style="font-size:.7rem; font-weight:500">have kids 49.6%</span>
+                    <span class="dot" style="background-color: #E9C46A ;"></span>
+                    <span style="font-size:.7rem; font-weight:500">no kids 50.4%</span>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table style="width:100%">
+        <tr>
+            <td class="border-right" style=" height:6rem" width="16%">
+                <table style="margin-top: -2rem;">
+                    <tr>
+                        <td class="sdheading">Avg. Household Income</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div><img class="dollar" src="{{templates_path}}/full-report-icons/dollarsign.svg"
+                                style="filter:contrast(0%) brightness(20%)" width="30px" height="30px">
+                                <span class="sdcontent" style="padding-left:1rem">108,164</span>
+                            </div>
+                           
+                        </td>
+                       
+                    </tr>
+
+                    <tr>
+                        <td class="sdsubtext">Household Income</td>
+                    </tr>
+
+                </table>
+            </td>
+            <td class="border-right" style="height:6rem;" width="17%  ">
+                <table style="margin-left:2rem ;margin-top:-2rem">
+                    <tr style="padding-left: 1rem;">
+                        <td class="sdheading">Education</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                            <img class="dollar" src="{{templates_path}}/full-report-icons/school.svg"
+                                style="filter:contrast(0%) brightness(20%)" width="30px" height="30px">
+                            <span class="sdcontent" style="padding-left:1rem">36.8%</span>
+                            </div>
+                        </td>
+                       
+                           
+                        
+
+                    <tr>
+                        <td class="sdsubtext">University degree</td>
+                    </tr>
+
+                </table>
+            </td>
+            <td class="border-right" style="height:8rem" width="28%">
+                <table style="margin-left:1rem ;margin-top:-2rem" >
+                    <tr>
+                        <td class="sdheading" style=" width:55%">Method of Travel to work</p>
+                    </tr>
+                    <tr>
+
+
+                        <td > 
+                            <div style="margin-top:-1rem">
+                                
+                                <img class="dollar" src="{{templates_path}}/full-report-icons/car.svg"
+                                    style="filter:contrast(0%) brightness(20%)" width="30px" height="30px">
+                                <span class="sdcontent" style="padding-left:1rem">75.6%</span>
+                                
+                                
+                                <span style=" margin-left:2rem" >
+                                    <img class="dollar" src="{{templates_path}}/full-report-icons/train.svg"
+                                        style="filter:contrast(0%) brightness(20%); margin-left:rem" width="30px" height="30px">
+                                    <span class="sdcontent" style="margin-left:rem">20.4%</span>
+                                </span>
+                            </div>
+
+
+                        </td>
+                        <td>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="sdsubtext">Travel to work by car</td> <td class="sdsubtext" style="margin-left:-3rem ;">Travel to work by Public Transit</td>
+                    </tr>
+
+                </table>
+            </td>
+            <td class="border-right" style=" height:8rem" width="20%">
+                <table style="margin-left:1rem; margin-top: -2rem;">
+                    <tr>
+                        <td class="sdheading">Avg. Household Income</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div>
+                                <img class="dollar" src="{{templates_path}}/full-report-icons/dollarsign.svg"
+                                style="filter:contrast(0%) brightness(20%)" width="30px" height="30px">
+                                <span class="sdcontent" style="padding-left:1rem">108,164</span>
+                            </div>
+                            
+                        </td>
+                        
+                    </tr>
+
+                    <tr>
+                        <td class="sdsubtext">Household Income</td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <!-- HEALTHCARE -->
+    <table class="sectionHeader" style="width: 100%; table-layout: fixed;margin-top:2rem ;">
+        <tr>
+            <td style="width: 3%;">
+                <img src="{{templates_path}}/full-report-icons/hospital-b.svg">
+            </td>
+            <td class="headcolor" style="font-size: 25px; padding-left:15px;">Healthcare</td>
+        </tr>
+    </table>
+
+    <table style="width: 100%; table-layout: fixed;">
+        <tr>
+            <td style="width: 21%; padding-right:10rem;">
+                <div>
+                    {% if data["healthcare"]["minor_closest_facility"]|length>1 %}
+                        <table style="width: 100%; table-layout: fixed;">
+                            <tr>
+                                <td class="headcolor hth" style="width: 50%;">Clinics (Minor)</td>
+                                <td class="headcolor hsth" style="text-align: right;">{{(data["healthcare"]["minor_closest_facility"]|length)-2}} More</td>
+                            </tr>
+                        </table>
+                        {% for i in range(0,2) %}
+                            <div class="hltbor" style=" border-radius: 10px;">
+                                <table style="margin: 5px;">
+                                    <tr style=" border-radius: 10px;">
+                                        <td style="width: 41%;">
+                                            <p class="heading-text">
+                                                {{data["healthcare"]["minor_closest_facility"][i]["name"]}}
+                                            </p>
+                                            <p class="address-text">
+                                                {{data["healthcare"]["minor_closest_facility"][i]["address"]}}
+                                            </p>
+                                        </td>
+                                        <td style="width: 41%;">
+                                            <span>
+                                                <img src="{{templates_path}}/full-report-icons/location-g.svg" width="30px">
+                                            </span>
+                                            <span class="distance-text">
+                                                {{data["healthcare"]["minor_closest_facility"][i]["drive"]["distance"]}}km
+                                            </span>
+                                            <span>
+                                                <img src="{{templates_path}}/full-report-icons/car-g.svg" width="30px">
+                                            </span>
+                                            <span class="distance-text">
+                                                {{data["healthcare"]["minor_closest_facility"][i]["drive"]["time"]}}mins
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </td>
+            <td style="width: 21%;padding-right:5rem; padding-left:5rem;">
+                <div>
+                    {% if data["healthcare"]["pharmacy_closest_facility"]|length>1 %}
+
+                        <table style="width: 100%; table-layout: fixed;">
+                            <tr>
+                                <td class="headcolor hth" style="width: 80%;">Pharmacies & Laboratory</td>
+                                <td class="headcolor hsth" style="text-align: right;">
+                                    {{(data["healthcare"]["pharmacy_closest_facility"]|length)-2}} more
+                                </td>
+                            </tr>
+                        </table>
+                        {% for i in range(0,2)  %}
+                            <div class="hltbor" style=" border-radius: 10px;">
+                                <table style="margin: 5px;">
+                                    <tr>
+                                        <td style="width: 41%;">
+                                            <p class="heading-text">
+                                                {{data["healthcare"]["pharmacy_closest_facility"][i]["name"]}}
+
+                                            </p>
+                                            <p class="address-text">
+                                                {{data["healthcare"]["pharmacy_closest_facility"][i]["address"]}}
+
+                                            </p>
+                                        </td>
+                                        <td style="width: 41%;">
+                                            <span>
+                                                <img src="{{templates_path}}/full-report-icons/location-g.svg" width="30px">
+                                            </span>
+                                            <span class="distance-text">
+                                                {{data["healthcare"]["pharmacy_closest_facility"][i]["drive"]["distance"]}}km
+
+                                            </span>
+                                            <span>
+                                                <img src="{{templates_path}}/full-report-icons/car-g.svg" width="30px">
+                                            </span>
+                                            <span class="distance-text">
+                                                {{data["healthcare"]["pharmacy_closest_facility"][i]["drive"]["time"]}}mins
+
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    
+                </div>
+            </td>
+            <td style="width: 21%; padding-left:10rem;">
+                <div>
+                {% if data["healthcare"]["healthcare_closest_facility"]|length>1 %}
+
+                    <table style="width: 100%; table-layout: fixed;">
+                        <tr>
+                            <td class="headcolor hth" style="width: 50%;">Health & Wellness</td>
+                            <td class="headcolor hsth" style="text-align: right;">
+                                {{(data["healthcare"]["healthcare_closest_facility"]|length)-2}} more
+                            </td>
+                        </tr>
+                    </table>
+                    {% for i in range(0,2) %}  
+                        <div class="hltbor" style=" border-radius: 10px;">
+                            <table style="margin: 5px;">
+                                <tr>
+                                    <td style="width: 41%;">
+                                        <p class="heading-text">
+                                            {{data["healthcare"]["healthcare_closest_facility"][i]["name"]}}
+
+                                        </p>
+                                        <p class="address-text">
+                                            {{data["healthcare"]["healthcare_closest_facility"][i]["address"]}}
+
+                                        </p>
+                                    </td>
+                                    <td style="width: 41%;">
+                                        <span>
+                                            <img src="{{templates_path}}/full-report-icons/location-g.svg" width="30px">
+                                        </span>
+                                        <span class="distance-text">
+                                            {{data["healthcare"]["healthcare_closest_facility"][i]["drive"]["distance"]}}km
+
+                                        </span>
+                                        <span>
+                                            <img src="{{templates_path}}/full-report-icons/car-g.svg" width="30px">
+                                        </span>
+                                        <span class="distance-text">
+                                            {{data["healthcare"]["healthcare_closest_facility"][i]["drive"]["time"]}}mins
+
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                    
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <!-- ELE_SCHOOL -->
+    <table class="sectionHeader" style="width: 100%; table-layout: fixed;margin-top: 7rem;">
+        <tr>
+            <td style="width: 3%;">
+                <img src="{{templates_path}}/full-report-icons/school-b.svg">
+            </td>
+            <td class="headcolor" style="font-size: 25px; padding-left: 1rem">Schools</td>
+        </tr>
+    </table>
+    {% if data["ele_school"]["closest_facility"]|length>3 %}
+
+        <table style="width: 100%; table-layout: fixed;">
+            <tr>
+                <td class="setext-f-6" style="width: 30%;">Elementary</td>
+                <td class="headcolor" style="text-align: right; width: 65%;">{{(data["ele_school"]["closest_facility"]|length) - 4}}more schools on findyourneighbourhood.com
+                </td>
+            </tr>
+        </table>
+        <table style="width: 100%; table-layout: fixed; ">
+            <tr>
+                {% for i in range(0,4) %}
+                    <td style="width: 15%;border-spacing: 40px;">
+                        <div class="border-light-75"
+                            style="padding:10px; border-radius: 10px;margin-right:20px; margin-left:20px">
+                            <span class="dot"></span>
+                            <span class="dottxt">French</span>
+                            <span class="dot"></span>
+                            <span class="dottxt">Public</span>
+                            <p class="stext" style="font-weight:700">
+                                {{data["ele_school"]["closest_facility"][i]["name"]}}
+
+                            </p>
+                            <p class="sstext">
+                                {{data["ele_school"]["closest_facility"][i]["address"]}}
+
+                            </p>
+                            <table>
+                                <tr>
+                                    <td style="width: 22%;">
+                                        <img src="{{templates_path}}/full-report-icons/location-g.svg" width="30px">
+                                        <p style="font-weight:400; font-size: 1rem;">                                                                
+                                            {{data["ele_school"]["closest_facility"][i]["walk"]["distance"]}}km
+                                        </p>
+                                    </td>
+                                    <td style="width: 22%;">
+                                        <img src="{{templates_path}}/full-report-icons/walk-g.svg" width="30px">
+                                        <p style="font-weight:400; font-size:1rem">
+                                            {{data["ele_school"]["closest_facility"][i]["walk"]["time"]}}mins
+                                            
+                                        </p>
+                                    </td>
+                                    <td style="width: 22%;">
+                                        <img src="{{templates_path}}/full-report-icons/car-g.svg" width="30px">
+                                        <p style="font-weight:400; font-size: 1rem">
+                                            {{data["ele_school"]["closest_facility"][i]["drive"]["time"]}}mins
+                                            
+                                        </p>
+                                    </td>
+                                    <td style="width: 22%;">
+                                        <img src="{{templates_path}}/full-report-icons/bike-g.svg" width="30px">
+                                        <p style="font-weight:400; font-size: 1rem;">
+                                            {{data["ele_school"]["closest_facility"][i]["drive"]["time"]}}mins
+                                            
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                {% endfor %}
+            </tr>
+        </table>
+    {% endif %}
+    <p class=" setext-f-6">Secondary</p>
+    <table style="width: 80%; table-layout: fixed;">
+        <tr>
+
+            {% if data["sec_school"]["closest_facility"]|length>3 %}
+                {% for i in range(0,4) %}
+
+                    <td style="width: 10%">
+
+
+                        <div class="border-persian bg-color-persian-green-light-25 "
+                            style="padding:10px; border-radius: 10px;margin-right:20px; margin-left:20px">
+                            <span class="dot"></span>
+                            <span class="dottxt">French</span>
+                            <span class="dot"></span>
+                            <span class="dottxt">Public</span>
+                            <p class="stext" style="font-weight:700">
+                                {{data["sec_school"]["closest_facility"][i]["name"]}}
+                            
+                            </p>
+                            <p class="sstext">
+
+                                {{data["sec_school"]["closest_facility"][i]["address"]}}
+
+                            </p>
+                            <table>
+                                <tr>
+                                    <td style="width: 22%;">
+                                        <img src="{{templates_path}}/full-report-icons/location-g.svg" width="30px">
+                                        <p style="font-weight:400; font-size: 1rem;"> 
+                                              {{data["sec_school"]["closest_facility"][i]["walk"]["distance"]}}km
+                                        </p>
+                                    </td>
+                                    <td style="width: 22%;">
+                                        <img src="{{templates_path}}/full-report-icons/walk-g.svg" width="30px">
+                                        <p style="font-weight:400; font-size:1rem">
+                                            {{data["sec_school"]["closest_facility"][i]["walk"]["time"]}}mins
+                                            
+                                        </p>
+                                    </td>
+                                    <td style="width: 22%;">
+                                        <img src="{{templates_path}}/full-report-icons/car-g.svg" width="30px">
+                                        <p style="font-weight:400; font-size: 1rem">
+                                            {{data["sec_school"]["closest_facility"][i]["drive"]["time"]}}mins
+                                            
+                                        </p>
+                                    </td>
+                                    <td style="width: 22%;">
+                                        <img src="{{templates_path}}/full-report-icons/bike-g.svg" width="30px">
+                                        <p style="font-weight:400; font-size: 1rem;">
+                                            {{data["sec_school"]["closest_facility"][i]["walk"]["time"]}}mins
+                                            
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                {% endfor %}
+            {% endif %}
+        </tr>
+    </table>
+
+    <!-- DAYCARE -->
+
+    {% if data["daycare"]["closest_facility"]|length>3 %}
+
+        <table class="sectionHeader" style="width: 100%; table-layout: fixed;margin-top: 1.5rem;">
+            <tr>
+                <td style="width: 3%;">
+                    <img src="{{templates_path}}/full-report-icons/day_care-b.svg">
+                </td>
+                <td class="dmain-text" style="font-size: 25px; width: 30%;">Day Care</td>
+                <td class="dsubtext" style="font-size: 20px; width: 55%; text-align: right;">
+                    {{(data["daycare"]["closest_facility"]|length)-4}} more
+                </td>
+            </tr>
+        </table>
+
+        <table style="width: 100%; table-layout: fixed;margin:15px">
+            <tr>
+                {% for i in  range(0,4) %}
+
+                    <td style="width: 21%">
+                        <div class=" dbg-color-charcoal" style="padding:10px; border-radius: 10px;margin-right:20px">
+                            <span class="dot"></span>
+                            <span class="dottxt">French</span>
+                            <span class="dot"></span>
+                            <span class="dottxt">Public</span>
+                            <p class="stext" style="font-weight:700;color:white">
+                            
+                                {{data["daycare"]["closest_facility"][i]["name"]}}
+                                
+                            </p>
+                            <p class="sstext">
+                                
+                                {{data["daycare"]["closest_facility"][i]["address"]}}
+
+                            </p>
+                            <table>
+                                <tr>
+                                    <td style="width: 22%;">
+                                        <img src="{{templates_path}}/full-report-icons/location-g.svg" width="30px">
+                                        <p style="font-weight:400; font-size: 1rem;">
+                                            {{data["daycare"]["closest_facility"][i]["walk"]["distance"]}}km
+                                            
+                                        </p>
+                                    </td>
+                                    <td style="width: 22%;">
+                                        <img src="{{templates_path}}/full-report-icons/walk-g.svg" width="30px">
+                                        <p style="font-weight:400; font-size:1rem">
+                                            {{data["daycare"]["closest_facility"][i]["walk"]["time"]}}mins
+                                            
+                                        </p>
+                                    </td>
+                                    <td style="width: 22%;">
+                                        <img src="{{templates_path}}/full-report-icons/car-g.svg" width="30px">
+                                        <p style="font-weight:400; font-size: 1rem">
+                                            {{data["daycare"]["closest_facility"][i]["drive"]["time"]}}mins
+                                            
+                                        </p>
+                                    </td>
+                                    <td style="width: 22%;">
+                                        <img src="{{templates_path}}/full-report-icons/bike-g.svg" width="30px">
+                                        <p style="font-weight:400; font-size: 1rem;">
+                                            {{data["daycare"]["closest_facility"][i]["walk"]["time"]}}mins
+                                            
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                {% endfor %}
+            </tr>
+        </table>
+    {% endif %}
+
+    <!-- GROCERIES -->
+    <table style="margin-top:1.5rem">
+        <tr>
+            <td>
+                {% if (data["grocery"]["minor_closest_facility"]|length + data["grocery"]["major_closest_facility"]|length) > 3 %}
+
+                    <table class="sectionHeader" style="width: 90%; table-layout: fixed;">
+                        <tr>
+                            <td style="width: 6%;">
+                                <img src="{{templates_path}}/full-report-icons/grocery-b.svg">
+                            </td>
+                            <td class="dmain-text" style="font-size: 25px; width: 45%; margin-left: 30px;">Groceries</td>
+                            <td class="dsubtext" style="font-size: 20px; width: 55%; text-align: right;">
+                                {{(data["grocery"]["minor_closest_facility"]|length) +(data["grocery"]["major_closest_facility"]|length) -4}} more
+                            </td>
+                        </tr>
+                    </table>
+                    <table style="width:50%;">
+                        {% if data["grocery"]["major_closest_facility"]|length > 1 %}
+                            <tr>
+                                <td class="border-right-gc" style="width:30%; padding-left: 30px; ">
+                                    <table class='pdfHeight  '>
+                                        <tr>
+                                            <td class=" color-75  gtext-f-4 font-weight-400">
+                                                {{data["grocery"]["major_closest_facility"][0]["name"]}}
+
+                                            </td>
+                                            <td>
+                                                <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px" height="32px" />
+                                            </td>
+                                            <td class="text-f-4 ">
+                                                {{ data["grocery"]["major_closest_facility"][0]["drive"]["distance"]}}km
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="  text-f-6 color-75 font-weight-400">
+                                                {{data["grocery"]["major_closest_facility"][0]["address"]}}
+
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                </td>
+                                <td class="border-bottom-gc" style="width:30%; padding-left:30px">
+                                    <table class='pdfHeight  '>
+                                        <tr>
+
+                                            <td class=" color-75  gtext-f-4 font-weight-400">
+                                                {{data["grocery"]["major_closest_facility"][1]["name"]}}
+
+                                            </td>
+                                            <td>
+                                                <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px" height="32px" />
+                                            </td>
+                                            <td class="text-f-4 ">
+                                                {{ data["grocery"]["major_closest_facility"][1]["drive"]["distance"]}}km
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="  text-f-6 color-75 font-weight-400">
+                                                {{data["grocery"]["major_closest_facility"][1]["address"]}}
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        {% endif %}
+                        {% if data["grocery"]["minor_closest_facility"]|length > 1 %}
+                            <tr>
+                                <td class="border-top-gc" style="width:30%; padding-left:30px;">
+                                    <table class='pdfHeight  '>
+                                        <tr>
+
+                                            <td class=" color-75 gtext-f-4 font-weight-400">
+                                                {{data["grocery"]["minor_closest_facility"][0]["name"]}}
+
+                                            </td>
+                                            <td>
+                                                <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px" height="32px" />
+                                            </td>
+                                            <td class="text-f-4 ">
+                                                {{data["grocery"]["minor_closest_facility"][0]["drive"]["distance"]}}km
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="  text-f-6 color-75 font-weight-400">
+                                                {{data["grocery"]["minor_closest_facility"][0]["address"]}}
+
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                </td>
+                                <td class="border-left-gc" style="width:30%;padding-left:30px">
+                                    <table class='pdfHeight  '>
+                                        <tr>
+
+                                            <td class="color-75 gtext-f-4 font-weight-400">
+                                                {{data["grocery"]["minor_closest_facility"][1]["name"]}}
+
+                                            </td>
+                                            <td>
+                                                <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px" height="32px" />
+                                            </td>
+                                            <td class="text-f-4 ">
+                                                {{data["grocery"]["minor_closest_facility"][1]["drive"]["distance"]}}km
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="  text-f-6 color-75 font-weight-400">
+                                                {{data["grocery"]["minor_closest_facility"][1]["address"]}}
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    </table>
+                {% endif %}
+            </td>
+            <td>
+                {% if (data["restaurant"]["closest_facility"]|length + data["bar"]["closest_facility"]|length + data["cafe"]["closest_facility"]|length) > 3 %}
+
+                        
+                    <table class="sectionHeader" style="width: 90%; table-layout: fixed;">
+                        <tr>
+                            <td style="width: 6%;">
+                                <img src="{{templates_path}}/full-report-icons/grocery-b.svg">
+                            </td>
+                            <td class="dmain-text" style="font-size: 25px; width: 45%; margin-left: 30px;">Restaurants,Bars and Cafe</td>
+                            <td class="dsubtext" style="font-size: 20px; width: 55%; text-align: right;">
+                                {{ (data["restaurant"]["closest_facility"]|length + data["bar"]["closest_facility"]|length + data["cafe"]["closest_facility"]|length) - 4 }}more
+                                    
+                            </td>
+                        </tr>
+                    </table>
+
+                    <table style="width:50%;">
+                        <tr>   
+                            {% if data["restaurant"]["closest_facility"]|length>0 %}
+                                
+                            
+                                <td class="border-right-gc" style="width:30%; padding-left: 30px; ">
+                                    <table class='pdfHeight  '>
+                                        <tr>
+                                            <td class=" color-75  gtext-f-4 font-weight-400">
+                                               {{ data["restaurant"]["closest_facility"][0]["name"]}}
+                                            </td>
+                                            <td>
+                                                <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px" height="32px" />
+                                            </td>
+                                            <td class="text-f-4 ">
+                                               {{ data["restaurant"]["closest_facility"][0]["walk"]["distance"]}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="  text-f-6 color-75 font-weight-400">
+                                               {{ data["restaurant"]["closest_facility"][0]["address"]}}
+
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                </td>
+                            {% endif %}
+                            {% if data["bar"]["closest_facility"]|length>0 %}
+                                <td class="border-bottom-gc" style="width:30%; padding-left:30px">
+                                    <table class='pdfHeight  '>
+                                        <tr>
+
+                                            <td class=" color-75  gtext-f-4 font-weight-400">
+                                                {{ data["bar"]["closest_facility"][0]["name"]}}
+
+                                            </td>
+                                            <td>
+                                                <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px" height="32px" />
+                                            </td>
+                                            <td class="text-f-4 ">
+                                                {{ data["bar"]["closest_facility"][0]["walk"]["distance"]}}
+
+                                            </td>
+
+
+
+
+                                        </tr>
+                                        <tr>
+                                            <td class="  text-f-6 color-75 font-weight-400">
+                                                {{ data["bar"]["closest_facility"][0]["address"]}}
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            {% endif %}
+                        </tr>
+                        <tr>
+                            {% if data["cafe"]["closest_facility"]|length>0 %}
+                                <td class="border-top-gc" style="width:30%; padding-left:30px;">
+                                    <table class='pdfHeight  '>
+                                        <tr>
+
+                                            <td class=" color-75 gtext-f-4 font-weight-400">
+                                                {{ data["cafe"]["closest_facility"][0]["name"]}}
+
+                                            </td>
+                                            <td>
+                                                <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px" height="32px" />
+                                            </td>
+                                            <td class="text-f-4 ">
+                                                {{ data["cafe"]["closest_facility"][0]["walk"]["distance"]}}
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="  text-f-6 color-75 font-weight-400">
+                                                {{ data["cafe"]["closest_facility"][0]["address"]}}
+
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                </td>
+                            {% endif %}
+                            {% if data["cafe"]["closest_facility"]|length>1 %}
+                                <td class="border-top-gc" style="width:30%; padding-left:30px;">
+                                    <table class='pdfHeight  '>
+                                        <tr>
+
+                                            <td class=" color-75 gtext-f-4 font-weight-400">
+                                                {{ data["cafe"]["closest_facility"][1]["name"]}}
+
+                                            </td>
+                                            <td>
+                                                <img src='{{templates_path}}/full-report-icons/location-g.svg' width="32px" height="32px" />
+                                            </td>
+                                            <td class="text-f-4 ">
+                                                {{ data["cafe"]["closest_facility"][1]["walk"]["distance"]}}
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="  text-f-6 color-75 font-weight-400">
+                                                {{ data["cafe"]["closest_facility"][1]["address"]}}
+
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                </td>
+                            {% endif %}
+                        </tr>
+                    </table>
+                {% endif %}
+            </td>
+
+
+        </tr>
+
+    </table>
+
+    <div class="mt-2 p-2 color-charcol text-break text-wrap bg-color-persian-green-light-50"
+        style="font-size:1.1rem; margin-left: 1.5rem; margin-right: 1.6em;">
+        <div class="mr-3" style="font-weight:500"> Copyright <img height="15px"
+                style="margin-left:2px; margin-right:2px" src='{{templates_path}}/full-report-icons/copy.svg'></img> 2022
+            Terahome360 Inc.
+            For more information visit <a href="www.findyourneighbourhood.com"
+                class='mx-1 ml-3'>www.findyourneighbourhood.com</a><br />
+            <span style="font-size:.8rem"> <i> <b class="mx-1">Disclaimer</b>: This material has been
+                    prepared for <span style="font-weight:700; margin-left:6px;margin-right:4px">
+                        Agent xdksk
+                    </span>under our license and terms of service, which are
+                    hereby incorporated by reference. This information may contain omissions and errors, and
+                    you
+                    must take steps to independently verify its content. As a recipient of this information,
+                    you
+                    agree not to hold us, our licensors, or the owners of the information liable for any
+                    damages,
+                    howsoever caused.</i></span>
+
+
+        </div>
+    </div>
+</body>
+</body>
+</head>

@@ -33,7 +33,7 @@ def get_pdf():
 
 
     try:
-        rendered = render_template("index.html",templates_path=path,data = all_data)
+        rendered = render_template("new.html",templates_path=path,data = all_data)
         # css = ['templates/main.css']
         pdfkit.from_string(rendered,"output.pdf")
     except:
